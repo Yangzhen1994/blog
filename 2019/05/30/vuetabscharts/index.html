@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="Hexo, NexT">
+  <meta name="keywords" content="前端,">
 
 
 
@@ -79,17 +79,24 @@
 
 
 
-<meta name="description" content="代码是生存,不是生活">
-<meta property="og:type" content="website">
-<meta property="og:title" content="tags">
-<meta property="og:url" content="http://yangzhen1994.github.io/tags/index.html">
+<meta name="description" content="vue中tabs切换导致一侧的echarts显示不了 (应该只要是设计tab切换就会有这个问题) 切换显示隐藏的时候渲染echarts计算宽度可能出现了问题 如图所示出错的图我的解决办法通过v-if控制未显示的tab下的图标组件暂时不渲染 监听el-tabs的切换事件 到当前tab下再加载当前tab下图表的dom解决">
+<meta name="keywords" content="前端">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Vue中tabs切换导致echarts显示不完整">
+<meta property="og:url" content="http://yangzhen1994.github.io/2019/05/30/vuetabscharts/index.html">
 <meta property="og:site_name" content="代码是生存,不是生活">
-<meta property="og:description" content="代码是生存,不是生活">
+<meta property="og:description" content="vue中tabs切换导致一侧的echarts显示不了 (应该只要是设计tab切换就会有这个问题) 切换显示隐藏的时候渲染echarts计算宽度可能出现了问题 如图所示出错的图我的解决办法通过v-if控制未显示的tab下的图标组件暂时不渲染 监听el-tabs的切换事件 到当前tab下再加载当前tab下图表的dom解决">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-05-24T12:34:45.540Z">
+<meta property="og:image" content="http://yangzhen1994.github.io/images/vuetabcharts.png">
+<meta property="og:image" content="http://yangzhen1994.github.io/images/vuetabcharts_error.png">
+<meta property="og:image" content="http://yangzhen1994.github.io/images/vuetabcharts_s1.png">
+<meta property="og:image" content="http://yangzhen1994.github.io/images/vuetabcharts_s2.png">
+<meta property="og:image" content="http://yangzhen1994.github.io/images/vuetabcharts_s3.png">
+<meta property="og:updated_time" content="2019-05-30T11:03:31.942Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="tags">
-<meta name="twitter:description" content="代码是生存,不是生活">
+<meta name="twitter:title" content="Vue中tabs切换导致echarts显示不完整">
+<meta name="twitter:description" content="vue中tabs切换导致一侧的echarts显示不了 (应该只要是设计tab切换就会有这个问题) 切换显示隐藏的时候渲染echarts计算宽度可能出现了问题 如图所示出错的图我的解决办法通过v-if控制未显示的tab下的图标组件暂时不渲染 监听el-tabs的切换事件 到当前tab下再加载当前tab下图表的dom解决">
+<meta name="twitter:image" content="http://yangzhen1994.github.io/images/vuetabcharts.png">
 
 
 
@@ -119,13 +126,13 @@
 
 
 
-  <link rel="canonical" href="http://yangzhen1994.github.io/tags/">
+  <link rel="canonical" href="http://yangzhen1994.github.io/2019/05/30/vuetabscharts/">
 
 
 
 
 
-  <title>tags | 代码是生存,不是生活</title>
+  <title>Vue中tabs切换导致echarts显示不完整 | 代码是生存,不是生活</title>
   
 
 
@@ -250,40 +257,159 @@
 
   <div id="posts" class="posts-expand">
     
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yangzhen1994.github.io/2019/05/30/vuetabscharts/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="yangzhen">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/myavatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="代码是生存,不是生活">
+    </span>
+
     
-    
-    <div class="post-block page">
       <header class="post-header">
 
-	<h1 class="post-title" itemprop="name headline">tags</h1>
-
-
-
-</header>
-
-      
-      
-      
-      <div class="post-body">
         
         
-          <div class="tag-cloud">
-            <div class="tag-cloud-title">
-                目前共计 2 个标签
-            </div>
-            <div class="tag-cloud-tags">
-              <a href="/tags/前端/" style="font-size: 30px; color: #111">前端</a> <a href="/tags/生活/" style="font-size: 12px; color: #ccc">生活</a>
-            </div>
-          </div>
+          <h1 class="post-title" itemprop="name headline">Vue中tabs切换导致echarts显示不完整</h1>
         
-      </div>
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-05-30T19:01:08+08:00">
+                2019-05-30
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+            <span class="post-meta-divider">|</span>
+            <span class="page-pv"><i class="fa fa-file-o"></i> 浏览
+            <span class="busuanzi-value" id="busuanzi_value_page_pv"></span>次
+            </span>
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
       
       
+
+      
+        <p>vue中tabs切换导致一侧的echarts显示不了 (应该只要是设计tab切换就会有这个问题) 切换显示隐藏的时候渲染echarts计算宽度可能出现了问题 如图所示<br><img src="/images/vuetabcharts.png" alt="Alt text"><br>出错的图<br><img src="/images/vuetabcharts_error.png" alt="Alt text"><br>我的解决办法<br>通过v-if控制未显示的tab下的图标组件暂时不渲染 监听el-tabs的切换事件 到当前tab下再加载当前tab下图表的dom<br>解决<br><img src="/images/vuetabcharts_s1.png" alt="Alt text"><br><img src="/images/vuetabcharts_s2.png" alt="Alt text"><br><img src="/images/vuetabcharts_s3.png" alt="Alt text"></p>
+
+      
+    </div>
+
+    
+    
+    
+    <div>
+      
+      <div>
+
+    <div style="text-align:center;color: #ccc;font-size:14px;">-------------本文结束<i class="fa fa-paw"></i>感谢您的阅读-------------</div>
+
+</div>
+
       
     </div>
     
+
     
+
     
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/前端/" <i class="fa fa-tag"> 前端</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/05/29/vue中使用的两种加密方式/" rel="next" title="项目中使用的两种加密方式">
+                <i class="fa fa-chevron-left"></i> 项目中使用的两种加密方式
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
   </div>
 
 
