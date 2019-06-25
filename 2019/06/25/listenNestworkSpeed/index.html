@@ -79,23 +79,23 @@
 
 
 
-<meta name="description" content="最近好久没有记录问题了，因为最近都没有写代码这不偶然遇到旭哥问我弱网情况下判断弱网图片加载慢 从而执行弱网逻辑问题img的onload 以及轮询img.complete我感觉都不能很好的判断是否为弱网，因为你轮询complete即使发现他的complete为true并且记录了加载事件或者为false的时间超过一个常量从而进行 判断是弱网感觉都很麻烦呢为什么不能直接检测网速 测试出结果后 再去进行弱">
+<meta name="description" content="最近好久没有记录问题了，因为最近都没有写代码这不偶然遇到旭哥问我弱网情况下判断弱网图片加载慢 从而执行弱网逻辑问题img的onload 以及轮询img.complete我感觉都不能很好的判断是否为弱网，因为你轮询complete即使发现他的complete为true并且记录了加载时间或者为false的时间超过一个常量从而进行 判断是弱网感觉都很麻烦呢为什么不能直接检测网速 测试出结果后 再去进行弱">
 <meta name="keywords" content="前端">
 <meta property="og:type" content="article">
 <meta property="og:title" content="关于js网速检测的那些事">
 <meta property="og:url" content="http://yangzhen1994.github.io/2019/06/25/listenNestworkSpeed/index.html">
 <meta property="og:site_name" content="代码是生存,不是生活">
-<meta property="og:description" content="最近好久没有记录问题了，因为最近都没有写代码这不偶然遇到旭哥问我弱网情况下判断弱网图片加载慢 从而执行弱网逻辑问题img的onload 以及轮询img.complete我感觉都不能很好的判断是否为弱网，因为你轮询complete即使发现他的complete为true并且记录了加载事件或者为false的时间超过一个常量从而进行 判断是弱网感觉都很麻烦呢为什么不能直接检测网速 测试出结果后 再去进行弱">
+<meta property="og:description" content="最近好久没有记录问题了，因为最近都没有写代码这不偶然遇到旭哥问我弱网情况下判断弱网图片加载慢 从而执行弱网逻辑问题img的onload 以及轮询img.complete我感觉都不能很好的判断是否为弱网，因为你轮询complete即使发现他的complete为true并且记录了加载时间或者为false的时间超过一个常量从而进行 判断是弱网感觉都很麻烦呢为什么不能直接检测网速 测试出结果后 再去进行弱">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="http://yangzhen1994.github.io/images/net1.jpg">
 <meta property="og:image" content="http://yangzhen1994.github.io/images/net2.jpg">
 <meta property="og:image" content="http://yangzhen1994.github.io/images/net3.jpg">
 <meta property="og:image" content="http://yangzhen1994.github.io/images/net4.jpg">
 <meta property="og:image" content="http://yangzhen1994.github.io/images/net5.jpg">
-<meta property="og:updated_time" content="2019-06-25T08:29:03.754Z">
+<meta property="og:updated_time" content="2019-06-25T08:39:59.054Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="关于js网速检测的那些事">
-<meta name="twitter:description" content="最近好久没有记录问题了，因为最近都没有写代码这不偶然遇到旭哥问我弱网情况下判断弱网图片加载慢 从而执行弱网逻辑问题img的onload 以及轮询img.complete我感觉都不能很好的判断是否为弱网，因为你轮询complete即使发现他的complete为true并且记录了加载事件或者为false的时间超过一个常量从而进行 判断是弱网感觉都很麻烦呢为什么不能直接检测网速 测试出结果后 再去进行弱">
+<meta name="twitter:description" content="最近好久没有记录问题了，因为最近都没有写代码这不偶然遇到旭哥问我弱网情况下判断弱网图片加载慢 从而执行弱网逻辑问题img的onload 以及轮询img.complete我感觉都不能很好的判断是否为弱网，因为你轮询complete即使发现他的complete为true并且记录了加载时间或者为false的时间超过一个常量从而进行 判断是弱网感觉都很麻烦呢为什么不能直接检测网速 测试出结果后 再去进行弱">
 <meta name="twitter:image" content="http://yangzhen1994.github.io/images/net1.jpg">
 
 
@@ -341,7 +341,7 @@
       
 
       
-        <p>最近好久没有记录问题了，因为最近都没有写代码<br><img src="/images/net1.jpg" alt="Alt text"><br>这不偶然遇到旭哥问我弱网情况下判断弱网图片加载慢 从而执行弱网逻辑问题<br>img的onload 以及轮询img.complete我感觉都不能很好的判断是否为弱网，因为你轮询complete即使发现他的complete为true并且记录了加载事件或者为false的时间超过一个常量从而进行 判断是弱网感觉都很麻烦呢<br>为什么不能直接检测网速 测试出结果后 再去进行弱网操作呢？<br>于是上网百度一番js网络监控的方法 这里搬运一下 做一个记录</p>
+        <p>最近好久没有记录问题了，因为最近都没有写代码<br><img src="/images/net1.jpg" alt="Alt text"><br>这不偶然遇到旭哥问我弱网情况下判断弱网图片加载慢 从而执行弱网逻辑问题<br>img的onload 以及轮询img.complete我感觉都不能很好的判断是否为弱网，因为你轮询complete即使发现他的complete为true并且记录了加载时间或者为false的时间超过一个常量从而进行 判断是弱网感觉都很麻烦呢<br>为什么不能直接检测网速 测试出结果后 再去进行弱网操作呢？<br>于是上网百度一番js网络监控的方法 这里搬运一下 做一个记录</p>
 <h3 id="贴几个认为有用的代码图"><a href="#贴几个认为有用的代码图" class="headerlink" title="贴几个认为有用的代码图"></a>贴几个认为有用的代码图</h3><p><img src="/images/net2.jpg" alt="Alt text"><br><img src="/images/net3.jpg" alt="Alt text"></p>
 <p>ajax</p>
 <pre><code><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line">&lt;!doctype html&gt;</span><br><span class="line">&lt;html&gt;</span><br><span class="line">&lt;head&gt;</span><br><span class="line">&lt;meta http-equiv=Content-Type content=&quot;text/html;charset=utf-8&quot;&gt;</span><br><span class="line">&lt;title&gt;js实现的网速测试方法&lt;/title&gt;</span><br><span class="line">&lt;/head&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line">&lt;script&gt;</span><br><span class="line">function measureBW(fn) &#123;</span><br><span class="line">    var startTime, endTime, fileSize;</span><br><span class="line">    var xhr = new XMLHttpRequest();</span><br><span class="line">    xhr.onreadystatechange = () =&gt; &#123;</span><br><span class="line">        if(xhr.readyState === 2)&#123;</span><br><span class="line">            startTime = Date.now();</span><br><span class="line">        &#125;</span><br><span class="line">        if (xhr.readyState === 4 &amp;&amp; xhr.status === 200) &#123;</span><br><span class="line">            endTime = Date.now();</span><br><span class="line">            fileSize = xhr.responseText.length;</span><br><span class="line">            console.log(fileSize);</span><br><span class="line">            var speed = fileSize  / ((endTime - startTime)/1000) / 1024;</span><br><span class="line">            fn &amp;&amp; fn(Math.floor(speed))</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    xhr.open(&quot;GET&quot;, &quot;https://upload.wikimedia.org/wikipedia/commons/5/51/Google.png?id=&quot; + Math.random(), true);</span><br><span class="line">    xhr.send();</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">measureBW((speed)=&gt;&#123;</span><br><span class="line">    document.write(&quot;&lt;div id=&apos;div1&apos;&gt;&quot;+speed + &quot; KB/s&lt;/div&gt;&quot;);</span><br><span class="line">    console.log(speed + &quot; KB/s&quot;);  //215 KB/sec</span><br><span class="line">&#125;)</span><br><span class="line">&lt;/script&gt;</span><br><span class="line">&lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure>
