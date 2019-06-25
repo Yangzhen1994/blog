@@ -1,0 +1,786 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion" lang="zh-Hans">
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="前端,">
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="最近好久没有记录问题了，因为最近都没有写代码这不偶然遇到旭哥问我弱网情况下判断弱网图片加载慢 从而执行弱网逻辑问题img的onload 以及轮询img.complete我感觉都不能很好的判断是否为弱网，因为你轮询complete即使发现他的complete为true并且记录了加载事件或者为false的时间超过一个常量从而进行 判断是弱网感觉都很麻烦呢为什么不能直接检测网速 测试出结果后 再去进行弱">
+<meta name="keywords" content="前端">
+<meta property="og:type" content="article">
+<meta property="og:title" content="关于js网速检测的那些事">
+<meta property="og:url" content="http://yangzhen1994.github.io/2019/06/25/listenNestworkSpeed/index.html">
+<meta property="og:site_name" content="代码是生存,不是生活">
+<meta property="og:description" content="最近好久没有记录问题了，因为最近都没有写代码这不偶然遇到旭哥问我弱网情况下判断弱网图片加载慢 从而执行弱网逻辑问题img的onload 以及轮询img.complete我感觉都不能很好的判断是否为弱网，因为你轮询complete即使发现他的complete为true并且记录了加载事件或者为false的时间超过一个常量从而进行 判断是弱网感觉都很麻烦呢为什么不能直接检测网速 测试出结果后 再去进行弱">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="http://yangzhen1994.github.io/images/net1.jpg">
+<meta property="og:image" content="http://yangzhen1994.github.io/images/net2.jpg">
+<meta property="og:image" content="http://yangzhen1994.github.io/images/net3.jpg">
+<meta property="og:image" content="http://yangzhen1994.github.io/images/net4.jpg">
+<meta property="og:image" content="http://yangzhen1994.github.io/images/net5.jpg">
+<meta property="og:updated_time" content="2019-06-25T08:29:03.754Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="关于js网速检测的那些事">
+<meta name="twitter:description" content="最近好久没有记录问题了，因为最近都没有写代码这不偶然遇到旭哥问我弱网情况下判断弱网图片加载慢 从而执行弱网逻辑问题img的onload 以及轮询img.complete我感觉都不能很好的判断是否为弱网，因为你轮询complete即使发现他的complete为true并且记录了加载事件或者为false的时间超过一个常量从而进行 判断是弱网感觉都很麻烦呢为什么不能直接检测网速 测试出结果后 再去进行弱">
+<meta name="twitter:image" content="http://yangzhen1994.github.io/images/net1.jpg">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Mist',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yangzhen1994.github.io/2019/06/25/listenNestworkSpeed/">
+
+
+
+
+
+  <title>关于js网速检测的那些事 | 代码是生存,不是生活</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">代码是生存,不是生活</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">代码是生存,不是生活</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br>
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            归档
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yangzhen1994.github.io/2019/06/25/listenNestworkSpeed/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="yangzhen">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/myavatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="代码是生存,不是生活">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">关于js网速检测的那些事</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-06-25T16:13:54+08:00">
+                2019-06-25
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+            <span class="post-meta-divider">|</span>
+            <span class="page-pv"><i class="fa fa-file-o"></i> 浏览
+            <span class="busuanzi-value" id="busuanzi_value_page_pv"></span>次
+            </span>
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>最近好久没有记录问题了，因为最近都没有写代码<br><img src="/images/net1.jpg" alt="Alt text"><br>这不偶然遇到旭哥问我弱网情况下判断弱网图片加载慢 从而执行弱网逻辑问题<br>img的onload 以及轮询img.complete我感觉都不能很好的判断是否为弱网，因为你轮询complete即使发现他的complete为true并且记录了加载事件或者为false的时间超过一个常量从而进行 判断是弱网感觉都很麻烦呢<br>为什么不能直接检测网速 测试出结果后 再去进行弱网操作呢？<br>于是上网百度一番js网络监控的方法 这里搬运一下 做一个记录</p>
+<h3 id="贴几个认为有用的代码图"><a href="#贴几个认为有用的代码图" class="headerlink" title="贴几个认为有用的代码图"></a>贴几个认为有用的代码图</h3><p><img src="/images/net2.jpg" alt="Alt text"><br><img src="/images/net3.jpg" alt="Alt text"></p>
+<p>ajax</p>
+<pre><code><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line">&lt;!doctype html&gt;</span><br><span class="line">&lt;html&gt;</span><br><span class="line">&lt;head&gt;</span><br><span class="line">&lt;meta http-equiv=Content-Type content=&quot;text/html;charset=utf-8&quot;&gt;</span><br><span class="line">&lt;title&gt;js实现的网速测试方法&lt;/title&gt;</span><br><span class="line">&lt;/head&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line">&lt;script&gt;</span><br><span class="line">function measureBW(fn) &#123;</span><br><span class="line">    var startTime, endTime, fileSize;</span><br><span class="line">    var xhr = new XMLHttpRequest();</span><br><span class="line">    xhr.onreadystatechange = () =&gt; &#123;</span><br><span class="line">        if(xhr.readyState === 2)&#123;</span><br><span class="line">            startTime = Date.now();</span><br><span class="line">        &#125;</span><br><span class="line">        if (xhr.readyState === 4 &amp;&amp; xhr.status === 200) &#123;</span><br><span class="line">            endTime = Date.now();</span><br><span class="line">            fileSize = xhr.responseText.length;</span><br><span class="line">            console.log(fileSize);</span><br><span class="line">            var speed = fileSize  / ((endTime - startTime)/1000) / 1024;</span><br><span class="line">            fn &amp;&amp; fn(Math.floor(speed))</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    xhr.open(&quot;GET&quot;, &quot;https://upload.wikimedia.org/wikipedia/commons/5/51/Google.png?id=&quot; + Math.random(), true);</span><br><span class="line">    xhr.send();</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">measureBW((speed)=&gt;&#123;</span><br><span class="line">    document.write(&quot;&lt;div id=&apos;div1&apos;&gt;&quot;+speed + &quot; KB/s&lt;/div&gt;&quot;);</span><br><span class="line">    console.log(speed + &quot; KB/s&quot;);  //215 KB/sec</span><br><span class="line">&#125;)</span><br><span class="line">&lt;/script&gt;</span><br><span class="line">&lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure>
+</code></pre><p>同样，考虑到http请求需要建立连接，以及等待响应，这些过程也会消耗一些时间，所以以上的方法可能不会准确的检测出网络带宽。</p>
+<p>我们可以同时发出多次请求，来减少http请求建立连接，等待响应的影响，参考如下代码：</p>
+<pre><code><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line">function measureBW(fn,time) &#123;</span><br><span class="line">    time = time || 1;</span><br><span class="line">    var startTime, endTime, fileSize;</span><br><span class="line">    var count = time ;</span><br><span class="line">    var _this = this;</span><br><span class="line">    function measureBWSimple () &#123;</span><br><span class="line">        var xhr = new XMLHttpRequest();</span><br><span class="line">        xhr.onreadystatechange = () =&gt; &#123;</span><br><span class="line">            if (xhr.readyState === 4 &amp;&amp; xhr.status === 200) &#123;</span><br><span class="line">                if(!fileSize)&#123;</span><br><span class="line">                    fileSize = xhr.responseText.length;</span><br><span class="line">                &#125;</span><br><span class="line">                count --;</span><br><span class="line">                if(count&lt;=0)&#123;</span><br><span class="line">                    endTime = Date.now();</span><br><span class="line">                    var speed = fileSize * time  / ((endTime - startTime)/1000) / 1024;</span><br><span class="line">                    fn &amp;&amp; fn(Math.floor(speed));</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        xhr.open(&quot;GET&quot;, &quot;https://upload.wikimedia.org/wikipedia/commons/5/51/Google.png?&quot; + Math.random(), true);</span><br><span class="line">        xhr.send();</span><br><span class="line">    &#125;</span><br><span class="line">    startTime = Date.now();</span><br><span class="line">    for(var x = time;x&gt;0;x--)&#123;</span><br><span class="line">        measureBWSimple()</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">measureBW((speed)=&gt;&#123;</span><br><span class="line">    console.log(speed + &quot; KB/sec&quot;);  //913 KB/sec</span><br><span class="line">&#125;,10)</span><br></pre></td></tr></table></figure>
+</code></pre><p>-API类<br><img src="/images/net4.jpg" alt="Alt text"></p>
+<h3 id="还有一个："><a href="#还有一个：" class="headerlink" title="还有一个："></a>还有一个：</h3><pre><code><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line">document.write(&apos;&lt;div id=&quot;msg&quot;&gt;正在测试网络延迟，请稍后...&lt;/div&gt;&apos;);</span><br><span class="line">document.write(&apos;&lt;a href=&quot;#&quot;&gt;电信网路&lt;/a&gt;    &lt;span class=&quot;classtime&quot; xl-name=&quot;电信网路&quot;&gt;&lt;/span&gt;&lt;br&gt;&apos;);</span><br><span class="line">document.write(&apos;&lt;a href=&quot;#&quot;&gt;联通网路&lt;/a&gt;    &lt;span class=&quot;classtime&quot; xl-name=&quot;联通网路&quot;&gt;&lt;/span&gt;&apos;);</span><br><span class="line">var jump=1,t=&#123;&#125;,autourl=new Array(),autoname=[];</span><br><span class="line">autourl[1]=&quot;http://image.baidu.com/&quot;; //这个是电信服务器站点</span><br><span class="line">autourl[2]=&quot;https://www.baidu.com/&quot;; //这个是联通服务器站点</span><br><span class="line">autoname[1]=&quot;电信网路&quot;;</span><br><span class="line">autoname[2]=&quot;联通网路&quot;;</span><br><span class="line">(function()&#123;</span><br><span class="line">    for(var i=1;i&lt;autourl.length;i++)&#123;</span><br><span class="line">        var img = new Image;</span><br><span class="line">        //img.onerror= auto(autourl[i]);</span><br><span class="line">        img.onerror= (function(j)&#123;</span><br><span class="line">            return function()&#123;</span><br><span class="line">                t[autourl[j]] =(new Date())- t[autourl[j]];  //记入时间差</span><br><span class="line">                console.log(autourl[j] + &quot;    ：&quot; + t[autourl[j]] + &quot;ms&quot;); //console.log(t[url] + &quot;ms&quot;);</span><br><span class="line">                document.querySelector(&apos;[xl-name=&quot;&apos;+autoname[j]+&apos;&quot;]&apos;).innerHTML =  t[autourl[j]] + &apos; ms&apos;;</span><br><span class="line">                console.log(jump);</span><br><span class="line">                if(jump) &#123;</span><br><span class="line">                    jump=0;</span><br><span class="line">                    document.getElementById(&quot;msg&quot;).innerText = &apos;3秒后进入【&apos; + autoname[j] + &apos;】&apos;;</span><br><span class="line">                    //setTimeout(function()&#123;top.location=url;&#125;,3000); //setTimeout(&quot;top.location=&apos;&quot; + url + &quot;&apos;;&quot;,3000);   //3s 即3000ms</span><br><span class="line">                    setTimeout(function()&#123;window.location.replace(autourl[j]);&#125;,3000);</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;)(i);</span><br><span class="line">        //闭包传值</span><br><span class="line">        img.src = autourl[i] + Math.random();</span><br><span class="line">        t[autourl[i]] = (+new Date());//记录开始载入时间</span><br><span class="line">    &#125;</span><br><span class="line">&#125;)();</span><br></pre></td></tr></table></figure>
+</code></pre><p><img src="/images/net5.jpg" alt="Alt text"></p>
+<h3 id="原文链接"><a href="#原文链接" class="headerlink" title="原文链接"></a>原文链接</h3><p><a href="https://www.cnblogs.com/7qin/p/10203457.html" title="链接" target="_blank" rel="noopener">https://www.cnblogs.com/7qin/p/10203457.html</a></p>
+
+      
+    </div>
+
+    
+    
+    
+    <div>
+      
+      <div>
+
+    <div style="text-align:center;color: #ccc;font-size:14px;">-------------本文结束<i class="fa fa-paw"></i>感谢您的阅读-------------</div>
+
+</div>
+
+      
+    </div>
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/前端/" <i class="fa fa-tag"> 前端</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/06/12/blink/" rel="next" title="css属性text-decoration 为blink的问题">
+                <i class="fa fa-chevron-left"></i> css属性text-decoration 为blink的问题
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image" src="/images/myavatar.jpg" alt="yangzhen">
+            
+              <p class="site-author-name" itemprop="name">yangzhen</p>
+              <p class="site-description motion-element" itemprop="description">代码是生存,不是生活</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">11</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">1</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">2</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/Yangzhen1994" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i>GitHub</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="mailto:walpyang@126.com" target="_blank" title="E-Mail">
+                      
+                        <i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#贴几个认为有用的代码图"><span class="nav-number">1.</span> <span class="nav-text">贴几个认为有用的代码图</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#还有一个："><span class="nav-number">2.</span> <span class="nav-text">还有一个：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#原文链接"><span class="nav-number">3.</span> <span class="nav-text">原文链接</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">yangzhen</span>
+
+  
+</div>
+
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Mist</a> v5.1.4</div>
+
+
+
+
+        
+<div class="busuanzi-count">
+  <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+    <span class="site-uv">
+      <i class="fa fa-user"></i> 访问人数
+      <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
+      次
+    </span>
+  
+
+  
+    <span class="site-pv">
+      <i class="fa fa-eye"></i> 访问总量
+      <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
+      次
+    </span>
+  
+</div>
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="//cdn.jsdelivr.net/gh/theme-next/theme-next-canvas-nest@1.0.0/canvas-nest.min.js"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
