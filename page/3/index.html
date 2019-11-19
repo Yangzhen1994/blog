@@ -275,6 +275,130 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yangzhen1994.github.io/2019/05/27/promise得一次复制粘贴/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="yangzhen">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/new_avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="杨镇的问题Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019/05/27/promise得一次复制粘贴/" itemprop="url">Promise的一次复制粘贴</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-05-27T11:13:54+08:00">
+                2019-05-27
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>之前在初步了解promise的时候，大概只是了解他适用于解决回掉地狱很表面的认识。<br>当然现在也不是很了解，直接简单地记录一下他的一次使用记录：<br>    <strong><font color="#F65327">此次使用了Promise.all[]来实现 调用后台返回的多来源接口 后进行数据装填</font></strong><br>    <strong><font color="#F65327">Promise.all可以将多个Promise实例包装成一个新的Promise实例。同时，成功和失败的返回值是不同的，成功的时候返回的是一个结果数组，而失败的时候则返回最先被reject失败状态的值。</font></strong><br><strong>贴一下代码-.-:</strong><br>    <strong><font color="#F65327">后台返回的参数里 又一个{key:[];}的格式 数字组里面事api调用的id 需要调用多个id的api</font></strong><br>    <strong><font color="#F65327">关于request方法的封装 也是封装返回promise对象 以便于then()调用 ps：请忽略appid的形参并没有用到-.-</font></strong><br>    <strong>lhRequest是封装好的axios实例方法就不贴了网上一搜一大堆 vue的一些demo里面也有</strong><br>    <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br></pre></td><td class="code"><pre><span class="line">// 获取多接口数据</span><br><span class="line">function fetchData(arr) &#123;</span><br><span class="line">    var promiseArr = []</span><br><span class="line">    arr.forEach(function (item, index) &#123;</span><br><span class="line">        promiseArr.push(request(item, &#123;apiid: item,bh:item.bh || &apos;&apos;,feature:item.feature || &apos;&apos;&#125;, &apos;post&apos;))</span><br><span class="line">    &#125;)</span><br><span class="line">    if (promiseArr.length &gt; 0) &#123;</span><br><span class="line">        lyTool.showloading()</span><br><span class="line">        Promise.all(promiseArr).then(function (values) &#123;</span><br><span class="line">            console.log(&apos;before&apos;);</span><br><span class="line">            //todo fillTable</span><br><span class="line">            var filledData = normalizeData(values)</span><br><span class="line">            fillTable(filledData)</span><br><span class="line">        &#125;);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">function request(apiid, data = &#123;&#125;, method = &apos;get&apos;) &#123;</span><br><span class="line">    return new Promise((resolve, reject) =&gt; &#123;</span><br><span class="line">        _request(apiid, resolve, reject, data, method)</span><br><span class="line">    &#125;)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">function _request(apiid, resolve, reject, data = &#123;&#125;, method = &apos;get&apos;) &#123;</span><br><span class="line">    lhRequest.service(&#123;</span><br><span class="line">        url: &apos;/serviceform/action&apos;,</span><br><span class="line">        method: method,</span><br><span class="line">        data: data</span><br><span class="line">    &#125;).then(function (msg) &#123;</span><br><span class="line">        if (msg.data.code == 200) &#123;</span><br><span class="line">            resolve(msg.data)</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;).catch(function (err) &#123;</span><br><span class="line">        console.log(err,&apos;1&apos;)</span><br><span class="line">        lhRequest.service(&#123;</span><br><span class="line">            url: &apos;/remote/serviceform/action&apos;,</span><br><span class="line">            method: method,</span><br><span class="line">            data: data</span><br><span class="line">        &#125;).then(function (msg)&#123;</span><br><span class="line">            if (msg.data.code == 200) &#123;</span><br><span class="line">                resolve(msg.data)</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;).catch(function (err) &#123;</span><br><span class="line">            console.log(err)</span><br><span class="line">            reject();</span><br><span class="line">        &#125;)</span><br><span class="line"></span><br><span class="line">    &#125;)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p><strong>以上就初步实现了多来源api调用的支持以及等待所有的api调用完成后进行数据装填 同样请求封装的方法也适用于其他情况</strong><br><strong>总而言之如果能熟练掌握promise的封装和正确使用对项目还是有很大好处 吃饭！</strong><br><img src="/images/toujuzi.gif" alt="Alt text"></p>
+
+          
+        
+      
+    </div>
+
+    
+    
+    
+    <div>
+      
+    </div>
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yangzhen1994.github.io/2019/05/24/life/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -385,6 +509,129 @@
 
 
     
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yangzhen1994.github.io/2019/05/24/jq_on/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="yangzhen">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/new_avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="杨镇的问题Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019/05/24/jq_on/" itemprop="url">jq on监听事件</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-05-24T17:54:54+08:00">
+                2019-05-24
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>移动端 document.on(event,dom.callback) ios不兼容</p>
+
+          
+        
+      
+    </div>
+
+    
+    
+    
+    <div>
+      
+    </div>
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
   </section>
 
   
@@ -437,7 +684,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">21</span>
+                  <span class="site-state-item-count">23</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>

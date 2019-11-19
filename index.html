@@ -275,6 +275,668 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yangzhen1994.github.io/2019/11/19/基础样式/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="yangzhen">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/new_avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="杨镇的问题Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019/11/19/基础样式/" itemprop="url">基础样式</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-11-19T17:54:54+08:00">
+                2019-11-19
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>本文汇总整理了自己用到的一些基础css，可用作基础的base.css引用到项目中<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br><span class="line">152</span><br><span class="line">153</span><br><span class="line">154</span><br><span class="line">155</span><br><span class="line">156</span><br><span class="line">157</span><br><span class="line">158</span><br><span class="line">159</span><br><span class="line">160</span><br><span class="line">161</span><br><span class="line">162</span><br><span class="line">163</span><br><span class="line">164</span><br><span class="line">165</span><br><span class="line">166</span><br><span class="line">167</span><br><span class="line">168</span><br><span class="line">169</span><br><span class="line">170</span><br><span class="line">171</span><br><span class="line">172</span><br><span class="line">173</span><br><span class="line">174</span><br><span class="line">175</span><br><span class="line">176</span><br><span class="line">177</span><br><span class="line">178</span><br><span class="line">179</span><br><span class="line">180</span><br><span class="line">181</span><br><span class="line">182</span><br><span class="line">183</span><br><span class="line">184</span><br><span class="line">185</span><br><span class="line">186</span><br><span class="line">187</span><br><span class="line">188</span><br><span class="line">189</span><br><span class="line">190</span><br><span class="line">191</span><br><span class="line">192</span><br><span class="line">193</span><br><span class="line">194</span><br><span class="line">195</span><br><span class="line">196</span><br><span class="line">197</span><br><span class="line">198</span><br><span class="line">199</span><br><span class="line">200</span><br><span class="line">201</span><br><span class="line">202</span><br><span class="line">203</span><br><span class="line">204</span><br><span class="line">205</span><br><span class="line">206</span><br><span class="line">207</span><br><span class="line">208</span><br><span class="line">209</span><br><span class="line">210</span><br><span class="line">211</span><br><span class="line">212</span><br><span class="line">213</span><br><span class="line">214</span><br><span class="line">215</span><br><span class="line">216</span><br><span class="line">217</span><br></pre></td><td class="code"><pre><span class="line">* &#123;</span><br><span class="line">    padding: 0;</span><br><span class="line">    margin: 0;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">html, body &#123;</span><br><span class="line">    height: 100%;</span><br><span class="line">    font-family: 微软雅黑 !important;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">a &#123;</span><br><span class="line">    text-decoration: none;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">.pr &#123;</span><br><span class="line">    position: relative;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">.pa &#123;</span><br><span class="line">    position: absolute;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">.fixed &#123;</span><br><span class="line">    position: fixed;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">.fl &#123;</span><br><span class="line">    float: left;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">.fr &#123;</span><br><span class="line">    float: right;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">ul li &#123;</span><br><span class="line">    list-style: none;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">.clearfix &#123;</span><br><span class="line">    zoom: 1;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">.clearfix:after &#123;</span><br><span class="line">    content: &apos;&apos;;</span><br><span class="line">    display: block;</span><br><span class="line">    clear: both;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">.pointer &#123;</span><br><span class="line">    cursor: pointer;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">/*滚动条样式*/</span><br><span class="line">::-webkit-scrollbar &#123; /*滚动条整体样式*/</span><br><span class="line">    width: 5px; /*高宽分别对应横竖滚动条的尺寸*/</span><br><span class="line">    height: 5px;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">::-webkit-scrollbar-thumb &#123; /*滚动条里面小方块*/</span><br><span class="line">    border-radius: 5px;</span><br><span class="line">    -webkit-box-shadow: inset 0 0 5px rgba(42, 41, 59, 0.2);</span><br><span class="line">    background: rgba(42, 41, 59, 0.2);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">::-webkit-scrollbar-track &#123; /*滚动条里面轨道*/</span><br><span class="line">    -webkit-box-shadow: inset 0 0 5px rgba(255, 255, 255, 0.2);</span><br><span class="line">    border-radius: 0;</span><br><span class="line">    background: rgba(250, 255, 255, 0.1);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">/*移动端1px像素*/</span><br><span class="line">.border_all, .border_bottom, .border_top, .border_left, .border_right &#123;</span><br><span class="line">    position: relative;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">.border_all:before &#123;</span><br><span class="line">    content: &quot;&quot;;</span><br><span class="line">    pointer-events: none; /* 防止点击触发 */</span><br><span class="line">    box-sizing: border-box;</span><br><span class="line">    position: absolute;</span><br><span class="line">    width: 200%;</span><br><span class="line">    height: 200%;</span><br><span class="line">    left: 0;</span><br><span class="line">    top: 0;</span><br><span class="line">    /*border-radius: 0.8rem;</span><br><span class="line">    -webkit-border-radius: 0.8rem;</span><br><span class="line">    -moz-border-radius: 0.8rem;*/</span><br><span class="line">    border: 1px solid #D8D8D8;</span><br><span class="line">    -webkit-transform: scale(0.5);</span><br><span class="line">    -webkit-transform-origin: 0 0;</span><br><span class="line">    -moz-transform: scale(0.5);</span><br><span class="line">    -moz-transform-origin: 0 0;</span><br><span class="line">    transform: scale(0.5);</span><br><span class="line">    transform-origin: 0 0;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">.border_bottom:before &#123;</span><br><span class="line">    content: &quot;&quot;;</span><br><span class="line">    pointer-events: none; /* 防止点击触发 */</span><br><span class="line">    box-sizing: border-box;</span><br><span class="line">    position: absolute;</span><br><span class="line">    width: 100%;</span><br><span class="line">    height: 0;</span><br><span class="line">    left: 0;</span><br><span class="line">    bottom: 0px;</span><br><span class="line">    /*border-radius: 0.8rem;</span><br><span class="line">    -webkit-border-radius: 0.8rem;</span><br><span class="line">    -moz-border-radius: 0.8rem;*/</span><br><span class="line">    -webkit-transform: scaleY(0.5);</span><br><span class="line">    -webkit-transform-origin: 0 0;</span><br><span class="line">    -moz-transform: scaleY(0.5);</span><br><span class="line">    -moz-transform-origin: 0 0;</span><br><span class="line">    transform: scaleY(0.5);</span><br><span class="line">    transform-origin: 0 0;</span><br><span class="line">    border-top: 1px solid #D8D8D8;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">.border_top:before &#123;</span><br><span class="line">    content: &quot;&quot;;</span><br><span class="line">    pointer-events: none; /* 防止点击触发 */</span><br><span class="line">    box-sizing: border-box;</span><br><span class="line">    position: absolute;</span><br><span class="line">    width: 100%;</span><br><span class="line">    height: 1px;</span><br><span class="line">    left: 0;</span><br><span class="line">    top: 0;</span><br><span class="line">    /*border-radius: 0.8rem;</span><br><span class="line">    -webkit-border-radius: 0.8rem;</span><br><span class="line">    -moz-border-radius: 0.8rem;*/</span><br><span class="line">    -webkit-transform: scaleY(0.5);</span><br><span class="line">    -webkit-transform-origin: 0 0;</span><br><span class="line">    -moz-transform: scaleY(0.5);</span><br><span class="line">    -moz-transform-origin: 0 0;</span><br><span class="line">    transform: scaleY(0.5);</span><br><span class="line">    transform-origin: 0 0;</span><br><span class="line">    border-bottom: 1px solid #D8D8D8;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">.border_left:before &#123;</span><br><span class="line">    content: &quot;&quot;;</span><br><span class="line">    pointer-events: none; /* 防止点击触发 */</span><br><span class="line">    box-sizing: border-box;</span><br><span class="line">    position: absolute;</span><br><span class="line">    width: 1px;</span><br><span class="line">    height: 100%;</span><br><span class="line">    left: 0;</span><br><span class="line">    top: 0;</span><br><span class="line">    /*border-radius: 0.8rem;</span><br><span class="line">    -webkit-border-radius: 0.8rem;</span><br><span class="line">    -moz-border-radius: 0.8rem;*/</span><br><span class="line">    -webkit-transform: scaleX(0.5);</span><br><span class="line">    -webkit-transform-origin: 0 0;</span><br><span class="line">    -moz-transform: scaleX(0.5);</span><br><span class="line">    -moz-transform-origin: 0 0;</span><br><span class="line">    transform: scaleX(0.5);</span><br><span class="line">    transform-origin: 0 0;</span><br><span class="line">    border-right: 1px solid #D8D8D8;;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">.border_right:before &#123;</span><br><span class="line">    content: &quot;&quot;;</span><br><span class="line">    pointer-events: none; /* 防止点击触发 */</span><br><span class="line">    box-sizing: border-box;</span><br><span class="line">    position: absolute;</span><br><span class="line">    width: 1px;</span><br><span class="line">    height: 100%;</span><br><span class="line">    right: 0;</span><br><span class="line">    top: 0;</span><br><span class="line">    /*border-radius: 0.8rem;</span><br><span class="line">    -webkit-border-radius: 0.8rem;</span><br><span class="line">    -moz-border-radius: 0.8rem;*/</span><br><span class="line">    -webkit-transform: scaleX(0.5);</span><br><span class="line">    -webkit-transform-origin: 0 0;</span><br><span class="line">    -moz-transform: scaleX(0.5);</span><br><span class="line">    -moz-transform-origin: 0 0;</span><br><span class="line">    transform: scaleX(0.5);</span><br><span class="line">    transform-origin: 0 0;</span><br><span class="line">    border-left: 1px solid #D8D8D8;;</span><br><span class="line">&#125;</span><br><span class="line">/*</span><br><span class="line">输入框placeholder*/</span><br><span class="line">input::-webkit-input-placeholder,textarea::-webkit-input-placeholder&#123;</span><br><span class="line">    color:rgba(0,0,0,.4);</span><br><span class="line">&#125;</span><br><span class="line">input::-moz-placeholder,textarea::-moz-placeholder&#123;   /* Mozilla Firefox 19+ */</span><br><span class="line">    color:rgba(0,0,0,.4);</span><br><span class="line">&#125;</span><br><span class="line">input:-moz-placeholder,textarea::-moz-placeholder&#123;    /* Mozilla Firefox 4 to 18 */</span><br><span class="line">    color:rgba(0,0,0,.4);</span><br><span class="line">&#125;</span><br><span class="line">input:-ms-input-placeholder,textarea:-ms-input-placeholder&#123;  /* Internet Explorer 10-11 */</span><br><span class="line">    color:rgba(0,0,0,.4);</span><br><span class="line">&#125;</span><br><span class="line">/*禁止复制*/</span><br><span class="line">.no_copy&#123;</span><br><span class="line">    -webkit-user-select: none;</span><br><span class="line">    -moz-user-select: none;</span><br><span class="line">    -khtml-user-select: none;</span><br><span class="line">    user-select: none;</span><br><span class="line">&#125;</span><br><span class="line">/*禁止选中*/</span><br><span class="line">.no_selected&#123;</span><br><span class="line">    -moz-user-select:none; /*火狐*/</span><br><span class="line">    -webkit-user-select:none; /*webkit浏览器*/</span><br><span class="line">    -ms-user-select:none; /*IE10*/</span><br><span class="line">    -khtml-user-select:none; /*早期浏览器*/</span><br><span class="line">    user-select:none;</span><br><span class="line">&#125;</span><br><span class="line">/*移动禁止选中 copy*/</span><br><span class="line">.no_touch &#123;</span><br><span class="line">    -webkit-touch-callout: none;</span><br><span class="line">    -webkit-user-select: none;</span><br><span class="line">    -khtml-user-select: none;</span><br><span class="line">    -moz-user-select: none;</span><br><span class="line">    -ms-user-select: none;</span><br><span class="line">    user-select: none;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+
+          
+        
+      
+    </div>
+
+    
+    
+    
+    <div>
+      
+    </div>
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yangzhen1994.github.io/2019/11/19/前端汇总/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="yangzhen">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/new_avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="杨镇的问题Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019/11/19/前端汇总/" itemprop="url">前端技术汇总</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-11-19T17:54:54+08:00">
+                2019-11-19
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>本文汇总整理了自己用到的一些基础css，可用作基础的base.css引用到项目中</p>
+<h1 id="前端技术汇总"><a href="#前端技术汇总" class="headerlink" title="前端技术汇总"></a>前端技术汇总</h1><hr>
+<p>由于前端相对后端框架、插件库更加的多样化，以及不同项目ui设计稿的多样性，定制化开发的各种需求，前端项目很难做到都是用统一的框架，所以此文档更多的是对以后项目进行总结已供参考。</p>
+<h2 id="本文档主要作用："><a href="#本文档主要作用：" class="headerlink" title="本文档主要作用："></a>本文档主要作用：</h2><blockquote>
+<ul>
+<li>整理目前技术中心前端项目中所用的技术</li>
+<li>目前前端项目中所用到的第三方插件库汇总</li>
+<li>通过此文档对现有前端项目进行一个初步了解</li>
+<li>对以后前端项目选型的参考</li>
+</ul>
+</blockquote>
+<hr>
+<p>[TOC]</p>
+<p>##一、项目概览</p>
+<p>此文档将项目分类成为 门户类 和 后管类 。</p>
+<h3 id="1-门户类"><a href="#1-门户类" class="headerlink" title="1. 门户类"></a>1. 门户类</h3><p>&ensp;&ensp;&ensp;&ensp;门户类项目中门户网站的排版非常重要。信息的呈现方式以及门户页面的样式不同不仅会影响到信息的浏览量，也会影响到用户体验。<br>&ensp;&ensp;&ensp;&ensp;目前的门户类项目大致如下：</p>
+<blockquote>
+<ul>
+<li>信用江苏 <a href="http://www.mescroll.com/" target="_blank" rel="noopener">http://www.jscredit.gov.cn/</a></li>
+<li>淄川可视化  待补充地址</li>
+<li>长春新区统一门户 <a href="http://www.mescroll.com/" target="_blank" rel="noopener">http://39.104.101.87:8080/cc_portal</a></li>
+<li>广州公租房（诚壹宜居pc 公众号）<a href="https://www.c1yj.com/" target="_blank" rel="noopener">https://www.c1yj.com/</a></li>
+</ul>
+</blockquote>
+<h3 id="2-后管类"><a href="#2-后管类" class="headerlink" title="2. 后管类"></a>2. 后管类</h3><p>&ensp;&ensp;&ensp;&ensp;后台管理系统最大的作用就是对用户业务的支撑，大多数以表格、图标为主。界面样式大多不会复杂，要求统一、简洁。<br>目前的后管项目大致如下：</p>
+<blockquote>
+<ul>
+<li>pass后台管理系统</li>
+<li>长春新区门户后台管理系统</li>
+<li>待补充</li>
+</ul>
+</blockquote>
+<p>##二、技术概览</p>
+<h3 id="1-门户类-1"><a href="#1-门户类-1" class="headerlink" title="1. 门户类"></a>1. 门户类</h3><p>&ensp;&ensp;&ensp;&ensp;门户类前端的技术栈现基于es5、jQuery、template.js、axios、flex、rem、bootstrap、layui等，部分前后端未分离的项目使用了freemarker模板。你的本地环境需要视项目情况安装node或者tomcat,以及对应的版本控制工具。</p>
+<h4 id="1-1、可视化大屏门户："><a href="#1-1、可视化大屏门户：" class="headerlink" title="1.1、可视化大屏门户："></a>1.1、可视化大屏门户：</h4><p>&ensp;&ensp;&ensp;&ensp;该门户大多需要兼容大屏以及响应式。</p>
+<h4 id="1-2、政府类、企业类、个人门户："><a href="#1-2、政府类、企业类、个人门户：" class="headerlink" title="1.2、政府类、企业类、个人门户："></a>1.2、政府类、企业类、个人门户：</h4><p>&ensp;&ensp;&ensp;&ensp;技术栈基于html+css+js，数据渲染使用了jquery、template.js、freemarker，前端请求使用ajax或者axios库，布局使用bootstrap-ui以及layui弹窗提示。</p>
+<h4 id="1-3、公众号"><a href="#1-3、公众号" class="headerlink" title="1.3、公众号"></a>1.3、公众号</h4><p>&ensp;&ensp;&ensp;&ensp;公众号主要采取rem的方式进行适配，css布局中也会使用到flex布局，以及WEUI的插件使用。其中数据交互以及逻辑代码为js原生或者jquery。<br> &ensp;&ensp;&ensp;&ensp;rem适配：</p>
+<pre><code>function rem() {
+var psd_width = 设计稿宽度,
+    win_width = document.documentElement.clientWidth,
+    viewport = document.querySelector(&apos;meta[name=&quot;viewport&quot;]&apos;),
+    dpr = window.devicePixelRatio || 1,
+    scale = 1 / dpr,
+    rem;
+    var style = document.createElement(&apos;style&apos;);
+    rem = win_width / psd_width * 100;
+    style.innerHTML = &quot;html{font-size:&quot; + rem + &quot;px!important;}&quot;;
+    document.querySelector(&quot;head&quot;).appendChild(style);
+}
+</code></pre><h3 id="2-后管类-1"><a href="#2-后管类-1" class="headerlink" title="2. 后管类"></a>2. 后管类</h3><p>&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;后管平台现在大多是基于vue-cli，去进行二次开发。你的本地环境需要安装 node 和 git。我们的技术栈基于 ES2015+、vue、vuex、vue-router 以及 element-ui，bootstrap,layui，echarts,所有的请求数据都使用Mock.js模拟，axios进行接口交互，提前了解和学习这些知识会对使用本项目有很大的帮助。</p>
+<p>##三、插件总结<br>这里列出一些使用过的插件，当然如果你有更多更方便的插件请你继续使用。</p>
+<h4 id="1-1、布局："><a href="#1-1、布局：" class="headerlink" title="1.1、布局："></a>1.1、布局：</h4><h4 id="ensp-ensp-ensp-ensp-1-1-1、flex布局"><a href="#ensp-ensp-ensp-ensp-1-1-1、flex布局" class="headerlink" title="&ensp;&ensp;&ensp;&ensp;1.1.1、flex布局"></a>&ensp;&ensp;&ensp;&ensp;1.1.1、flex布局</h4><p>&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;多用于大屏以及移动端布局,是一种自适应的弹性布局。Flex 是 Flexible Box 的缩写，意为”弹性布局”，用来为盒状模型提供最大的灵活性。<br>&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;任何一个容器都可以指定为 Flex 布局。</p>
+<pre><code>.box{display: flex;}
+</code></pre><p>&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;行内元素也可以使用 Flex 布局。</p>
+<pre><code>.box{display: inline-flex;}
+</code></pre><p>&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;Webkit 内核的浏览器，必须加上-webkit前缀。</p>
+<pre><code>.box{
+  display: -webkit-flex; /* Safari */
+  display: flex;
+}
+</code></pre><p>&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;注意，设为 Flex 布局以后，子元素的float、clear和vertical-align属性将失效。<br>&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;flex容器的6个属性：</p>
+<blockquote>
+<ul>
+<li>flex-direction 属性决定主轴的方向（即项目的排列方向）</li>
+<li>flex-wrap flex-wrap属性定义，如果一条轴线排不下，如何换行</li>
+<li>flex-flow flex-flow属性是flex-direction属性和flex-wrap属性的简写形式，默认值为row nowrap。</li>
+<li>justify-content 属性定义了项目在主轴上的对齐方式</li>
+<li>align-items 属性定义项目在交叉轴上如何对齐。</li>
+<li>align-content 属性定义了多根轴线的对齐方式。如果项目只有一根轴线，该属性不起作用。</li>
+</ul>
+</blockquote>
+<p>flex布局详细用法 <a href="http://www.ruanyifeng.com/blog/2015/07/flex-grammar.html?utm_source=tuicool" target="_blank" rel="noopener">Flex 布局教程：语法篇</a></p>
+<h4 id="ensp-ensp-ensp-ensp-1-1-2、栅格布局"><a href="#ensp-ensp-ensp-ensp-1-1-2、栅格布局" class="headerlink" title="&ensp;&ensp;&ensp;&ensp;1.1.2、栅格布局"></a>&ensp;&ensp;&ensp;&ensp;1.1.2、栅格布局</h4><p>&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;项目中多使用bootstrap-ui,element-ui自带的栅格布局，也能满足响应式以及自适应的布局需求。</p>
+<blockquote>
+<ul>
+<li>bootstrap栅格布局 <a href="https://v3.bootcss.com/css/#grid" target="_blank" rel="noopener">bootstrap栅格系统</a></li>
+<li>element栅格布局 <a href="https://element.eleme.cn/#/zh-CN/component/layout" target="_blank" rel="noopener">element栅格系统</a></li>
+</ul>
+</blockquote>
+<h4 id="1-2、表格："><a href="#1-2、表格：" class="headerlink" title="1.2、表格："></a>1.2、表格：</h4><h4 id="ensp-ensp-ensp-ensp-1-2-1、element表格"><a href="#ensp-ensp-ensp-ensp-1-2-1、element表格" class="headerlink" title="&ensp;&ensp;&ensp;&ensp;1.2.1、element表格"></a>&ensp;&ensp;&ensp;&ensp;1.2.1、element表格</h4><h4 id="ensp-ensp-ensp-ensp-1-2-2、原生表格"><a href="#ensp-ensp-ensp-ensp-1-2-2、原生表格" class="headerlink" title="&ensp;&ensp;&ensp;&ensp;1.2.2、原生表格"></a>&ensp;&ensp;&ensp;&ensp;1.2.2、原生表格</h4><h4 id="1-3、时间选择器："><a href="#1-3、时间选择器：" class="headerlink" title="1.3、时间选择器："></a>1.3、时间选择器：</h4><h4 id="1-4、弹窗："><a href="#1-4、弹窗：" class="headerlink" title="1.4、弹窗："></a>1.4、弹窗：</h4><h4 id="1-5、图表："><a href="#1-5、图表：" class="headerlink" title="1.5、图表："></a>1.5、图表：</h4><h4 id="1-6、穿梭框："><a href="#1-6、穿梭框：" class="headerlink" title="1.6、穿梭框："></a>1.6、穿梭框：</h4><h4 id="1-7、上传："><a href="#1-7、上传：" class="headerlink" title="1.7、上传："></a>1.7、上传：</h4><h4 id="ensp-ensp-ensp-ensp-ensp-ensp-1-7-1、element中的上传"><a href="#ensp-ensp-ensp-ensp-ensp-ensp-1-7-1、element中的上传" class="headerlink" title="&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;1.7.1、element中的上传"></a>&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;1.7.1、element中的上传</h4><p>&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;后管项目中一般使用的都是基于elementui的上传组件。 <a href="https://element.eleme.cn/#/zh-CN/component/upload" target="_blank" rel="noopener">upload上传</a></p>
+<h4 id="ensp-ensp-ensp-ensp-ensp-ensp-1-7-2、weui中的上传"><a href="#ensp-ensp-ensp-ensp-ensp-ensp-1-7-2、weui中的上传" class="headerlink" title="&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;1.7.2、weui中的上传"></a>&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;1.7.2、weui中的上传</h4><p>&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;此上传用于移动端<a href="https://weui.io/#uploader" target="_blank" rel="noopener">实例</a> <a href="http://www.gzznsh.com/demo/form12.html" target="_blank" rel="noopener">带lzr压缩的上传</a><br>&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;注：不同版本可能插件的使用方法会有不同<br>&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;附：带lzr压缩的移动端weui上传code</p>
+<pre><code>&lt;!--uparea  --&gt;
+    //同时需要引入对应的weui.css
+        &lt;div class=&quot;upload_op_area&quot;&gt;
+            &lt;div class=&quot;weui-gallery&quot; id=&quot;gallery&quot;&gt;
+                &lt;span class=&quot;weui-gallery__img&quot; id=&quot;galleryImg&quot;&gt;&lt;/span&gt;
+                &lt;div class=&quot;weui-gallery__opr&quot;&gt;
+                    &lt;a href=&quot;javascript:&quot; class=&quot;weui-gallery__del&quot;&gt;
+                        &lt;i class=&quot;weui-icon-delete weui-icon_gallery-delete&quot;&gt;&lt;/i&gt;
+                    &lt;/a&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+            &lt;div class=&quot;weui-cells weui-cells_form&quot;&gt;
+                &lt;div class=&quot;weui-cell&quot;&gt;
+                    &lt;div class=&quot;weui-cell__bd&quot;&gt;
+                        &lt;div class=&quot;weui-uploader&quot;&gt;
+                            &lt;div class=&quot;weui-uploader__bd&quot;&gt;
+                                &lt;ul class=&quot;weui-uploader__files&quot; id=&quot;uploaderFiles&quot;&gt;
+
+                                &lt;/ul&gt;
+                                &lt;div class=&quot;weui-uploader__input-box&quot;&gt;
+                                    &lt;input id=&quot;uploaderInput&quot; class=&quot;weui-uploader__input zjxfjs_file&quot; type=&quot;file&quot; accept=&quot;image/*&quot;&gt;&lt;!--去除可以一次多张不然压缩可能会卡死--&gt;
+                                &lt;/div&gt;
+                            &lt;/div&gt;
+                        &lt;/div&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+        //引入js
+        &lt;script src=&quot;/static/wechat/js/frame/compressImg/lrz.bundle.js&quot;&gt;&lt;/script&gt;
+   &lt;script src=&quot;https://cdn.bootcss.com/jquery-weui/1.2.0/js/jquery-weui.min.js&quot;&gt;&lt;/script&gt;     
+
+        //上传图片mock
+    $(&apos;.uplaod_tab div&apos;).on(&apos;click&apos;, function () {
+        $(this).addClass(&apos;selected&apos;)
+        $(this).siblings().removeClass(&apos;selected&apos;)
+    });
+    var tmpl = &apos;&lt;li class=&quot;weui-uploader__file pr&quot; style=&quot;background-image:url(#url#)&quot;&gt;&lt;div class=&quot;type&quot;&gt;&lt;span&gt;&lt;/span&gt;&lt;/div&gt;&lt;/li&gt;&apos;,
+            $gallery = $(&quot;#gallery&quot;),
+            $galleryImg = $(&quot;#galleryImg&quot;),
+            $uploaderInput = $(&quot;#uploaderInput&quot;),
+            $uploaderFiles = $(&quot;#uploaderFiles&quot;),
+            count = 0,
+            oldCode = &apos;&apos;,
+            formData = new FormData();
+    var mainPc = 0;
+    $uploaderInput.on(&quot;change&quot;, function (e) {
+        var src, url = window.URL || window.webkitURL || window.mozURL,
+                files = e.target.files;
+        if (mainPc &gt; 0 &amp;&amp; $(&apos;.uplaod_tab .selected&apos;).attr(&apos;code&apos;) == &apos;mainpic&apos;) {
+            $.alert(&apos;只能上传1张封面图&apos;);
+            stopScroll($(&apos;.weui-mask&apos;));
+            $uploaderInput.val(&apos;&apos;)
+            return false;
+        }
+        if (count &gt;= 12 || files.length &gt; 12) {
+            $.alert(&apos;最多上传12张图片&apos;);
+            stopScroll($(&apos;.weui-mask&apos;))
+            return false;
+        }
+
+        var isOver = false;
+        $.showLoading(&apos;图片处理中请稍等~&apos;)
+        for (var i = 0, len = files.length; i &lt; len; ++i) {
+            var file = files[i];
+            var fileName = file.name;
+            lrz(file)
+                    .then(function (rst) {
+                        $.hideLoading()
+                        console.log(&apos;压缩后：&apos; + rst.fileLen)
+                        file = rst.file;
+                        imgWrapList.forEach(function (item, index) {
+                            if (file.size == item.size &amp;&amp; file.name == item.name) {
+                                isOver = true
+                                $.alert(&apos;图片重复&apos;, function () {
+                                    isOver = false
+                                    $(&quot;#uploaderInput&quot;).val(&apos;&apos;)
+                                });
+                                stopScroll($(&apos;.weui-mask&apos;))
+                                return false;
+                            }
+                        })
+                        if (isOver) {
+                            return
+                        }
+
+                        if (file.size &gt; 10 * 1024 * 1024) {
+                            $.alert(&apos;请上传不超过10M的图片&apos;);
+                            stopScroll($(&apos;.weui-mask&apos;))
+                            return false;
+                        }
+                        if(fileName){
+                            file.name=fileName;
+                        }
+                        transformFileToFormData(file)
+
+                        if (url) {
+                            src = url.createObjectURL(file);
+                        } else {
+                            src = e.target.result;
+                        }
+                        count++;
+                        var str = &apos;&apos;;
+                        var tmpl1 = (tmpl.split(&apos;&lt;span&gt;&apos;)[0] + &apos;&lt;span&gt;&apos; + str + tmpl.split(&apos;&lt;span&gt;&apos;)[1])
+                        $uploaderFiles.append($(tmpl1.replace(&apos;#url#&apos;, src)));
+                        //$(tmpl).find(&apos;.type&apos;).find(&apos;span&apos;).text(str)
+                        $.ajax({
+                            timeout: 30000,
+                            type: &quot;POST&quot;,
+                            url:,
+                            data: formData,
+                            beforeSend: function () {
+                                $.showLoading(&apos;图片上传中...&apos;)
+                            },
+                            contentType: false,     // 注意这里应设为false
+                            processData: false,     //  告诉jquery不要处理发送的数据
+                            success: function (res) {
+                                if (res.code === 200) {
+                                    if (!oldCode) {
+                                        var code = $(&apos;.uplaod_tab .selected&apos;).attr(&apos;code&apos;);
+                                        oldCode = code
+                                        roomPictypes += code //图片所属的类型
+                                        roomPics += res.data.name
+                                    } else {
+                                        var code = $(&apos;.uplaod_tab .selected&apos;).attr(&apos;code&apos;);
+                                        if (oldCode != code) {
+                                            if (roomPictypes.indexOf(code) &lt; 0) {
+                                                oldCode = code
+                                                roomPictypes += (&apos;,&apos; + code)
+                                                roomPics += (&apos;;&apos; + res.data.name)
+                                            } else {
+                                                var index = roomPictypes.replace(&apos;,&apos;, &apos;&apos;).indexOf(code)
+                                                var tempArr = roomPics.split(&apos;;&apos;)
+                                                var str = tempArr[index]
+                                                str += (&apos;,&apos; + res.data.name)
+                                                tempArr[index] = str
+                                                roomPics = tempArr.join(&apos;;&apos;)
+                                            }
+                                        } else {
+                                            roomPics += (&apos;,&apos; + res.data.name)
+                                        }
+                                    }
+                                }
+                            },
+                            complete: function () {
+                                $(&quot;#uploaderInput&quot;).val(&apos;&apos;);
+                                formData.delete(&apos;type&apos;);
+                                // size
+                                formData.delete(&apos;size&apos;);
+                                // name
+                                formData.delete(&apos;name&apos;);
+                                // lastModifiedDate
+                                formData.delete(&apos;lastModifiedDate&apos;);
+                                // append 文件
+                                formData.delete(&apos;file&apos;);
+                                $.hideLoading();
+                            },
+                            error: function (error) {
+                                delHandle($uploaderFiles.length - 1)
+                                $.alert(&apos;图片上传失败，请重试&apos;);
+                            }//请求出错
+                        });
+                    })
+        }
+    });
+    var index; //第几张图片
+    $uploaderFiles.on(&quot;click&quot;, &quot;li&quot;, function () {
+        index = $(this).index();
+        $galleryImg.attr(&quot;style&quot;, this.getAttribute(&quot;style&quot;));
+        $gallery.fadeIn(100);
+    });
+</code></pre><h4 id="ensp-ensp-ensp-ensp-ensp-ensp-1-7-3、tinyUpload"><a href="#ensp-ensp-ensp-ensp-ensp-ensp-1-7-3、tinyUpload" class="headerlink" title="&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;1.7.3、tinyUpload"></a>&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;1.7.3、tinyUpload</h4><pre><code>引入文件
+ &lt;script src=&quot;../../js/jquery.js&quot;&gt;&lt;/script&gt;
+&lt;link rel=&quot;stylesheet&quot; href=&quot;../../css/tinyImgUpload.css&quot;&gt;
+&lt;script src=&quot;../../js/tinyImgUpload.js&quot;&gt;&lt;/script&gt;
+
+ `/**
+ * tinyImgUpload
+ * @param ele [string] [生成组件的元素的选择器]
+ * @param options [Object] [对组件设置的基本参数]
+ * options具体参数如下
+ * path 图片上传的地址路径 必需
+ * onSuccess(res) 文件上传成功后的回调 参数为返回的文本 必需
+ * onFailure(res) 文件上传失败后的回调 参数为返回的文本 必需
+ * @return [function] [执行图片上传的函数]
+ * 调用方法
+ * tinyImgUpload(&apos;div&apos;, options)
+ */
+function tinyImgUpload(ele, options) {
+
+// 判断容器元素合理性并且添加基础元素
+var eleList = document.querySelectorAll(ele);
+if(eleList.length == 0){
+    console.log(&apos;绑定的元素不存在&apos;);
+    return;
+}else if(eleList.length&gt;1){
+    console.log(&apos;请绑定唯一元素&apos;);
+    return;
+}else {
+    eleList[0].innerHTML =&apos;&lt;div id=&quot;img-container&quot; &gt;&apos;+
+
+            &apos;&lt;div class=&quot;img-up-add  img-item&quot;&gt;&lt;div class=&quot;up_title&quot;&gt;上传电脑图片&lt;/div&gt;&lt;span class=&quot;img-add-icon&quot;&gt;&lt;img src=&quot;../../img/add_img_icon.png&quot; alt=&quot;&quot; width=&quot;64px&quot;&gt;&lt;/span&gt; &lt;/div&gt;&apos;+
+            &apos;&lt;div class=&quot;prev_area&quot;&gt;&apos;+
+            &apos;&lt;input type=&quot;file&quot; name=&quot;files&quot; id=&quot;img-file-input&quot; multiple &quot;&gt;&apos;+
+            &apos;&lt;/div&gt;&apos;;
+    var ele = eleList[0].querySelector(&apos;#img-container&apos;);
+    ele.files = [];   // 当前上传的文件数组
+}
+
+// 为添加按钮绑定点击事件，设置选择图片的功能
+var addBtn = document.querySelector(&apos;.img-up-add&apos;);
+addBtn.addEventListener(&apos;click&apos;,function () {
+    document.querySelector(&apos;#img-file-input&apos;).value = null;
+    document.querySelector(&apos;#img-file-input&apos;).click();
+    return false;
+},false)
+
+// 预览图片
+//处理input选择的图片
+function handleFileSelect(evt) {
+    var files = evt.target.files;
+
+
+    for(var i=0, f; f=files[i];i++){
+        // 过滤掉非图片类型文件
+        if(!f.type.match(&apos;image.*&apos;)){
+            continue;
+        }
+        // 过滤掉重复上传的图片
+        var tip = false;
+        for(var j=0; j&lt;(ele.files).length; j++){
+            if((ele.files)[j].name == f.name){
+                layer.alert(&apos;图片已存在&apos;)
+                tip = true;
+                break;
+            }
+        }
+        if(!tip){
+            // 图片文件绑定到容器元素上
+
+            if(ele.files.length&gt;=12){
+                layer.alert(&apos;最多12张&apos;);
+                return false
+            }
+            ele.files.push(f);
+            var reader = new FileReader();
+            reader.onload = (function (theFile) {
+                return function (e) {
+                    var oDiv = document.createElement(&apos;div&apos;);
+                    oDiv.className = &apos;img-thumb img-item border_all&apos;;
+                    // 向图片容器里添加元素
+
+                    oDiv.innerHTML = &apos;&lt;img class=&quot;thumb-icon&quot; src=&quot;&apos;+e.target.result+&apos;&quot; /&gt;&apos;+
+                                    &apos;&lt;a href=&quot;javscript:;&quot; class=&quot;img-remove&quot;&gt;x&lt;/a&gt;&apos;
+                    ele.insertBefore(oDiv, addBtn);
+                   // $(&apos;.prev_area&apos;).append(oDiv)
+                    uploadImg()
+                };
+            })(f);
+
+            reader.readAsDataURL(f);
+        }
+    }
+}
+document.querySelector(&apos;#img-file-input&apos;).addEventListener(&apos;change&apos;, handleFileSelect, false);
+
+// 删除图片
+function removeImg(evt) {
+    if(evt.target.className.match(/img-remove/)){
+        console.log(&apos;3&apos;,ele.files);
+        // 获取删除的节点的索引
+        function getIndex(ele){
+
+            if(ele &amp;&amp; ele.nodeType &amp;&amp; ele.nodeType == 1) {
+                var oParent = ele.parentNode;
+                var oChilds = oParent.children;
+                for(var i = 0; i &lt; oChilds.length; i++){
+                    if(oChilds[i] == ele)
+                        return i;
+                }
+            }else {
+                return -1;
+            }
+        }
+        // 根据索引删除指定的文件对象
+        var index = getIndex(evt.target.parentNode);
+        ele.removeChild(evt.target.parentNode);
+        if(index &lt; 0){
+            return;
+        }else {
+            ele.files.splice(index, 1);
+            //对应删除库里的图片？
+        }
+        console.log(&apos;4&apos;,ele.files);
+    }
+}
+ele.addEventListener(&apos;click&apos;, removeImg, false);
+
+// 上传图片
+function uploadImg() {
+    console.log(ele.files);
+
+    var xhr = new XMLHttpRequest();
+    var formData = new FormData();
+
+    for(var i=0, f; f=ele.files[i]; i++){
+        formData.append(&apos;files&apos;, f);
+    }
+
+    console.log(&apos;1&apos;,ele.files);
+    console.log(&apos;2&apos;,formData);
+    $.ajax(
+        {
+            type:&quot;POST&quot;,//通常会用到两种：GET,POST。默认是：GET
+            url:options.path,//(默认: 当前页地址) 发送请求的地址
+            beforeSend:function () {
+
+            },
+            data:formData,
+            contentType: false, // 注意这里应设为false
+            processData:false,   //  告诉jquery不要处理发送的数据
+            success:options.onSuccess, //请求成功
+            error:options.onFailure,//请求出错
+            complete:function () {
+                $(&apos;#img-file-input&apos;).val(&apos;&apos;)
+            }//请求完成
+        });
+
+}
+return uploadImg;
+}`   
+</code></pre><h4 id="1-8、分页："><a href="#1-8、分页：" class="headerlink" title="1.8、分页："></a>1.8、分页：</h4><h5 id="ensp-ensp-ensp-ensp-1-8-1、移动端分页"><a href="#ensp-ensp-ensp-ensp-1-8-1、移动端分页" class="headerlink" title="&ensp;&ensp;&ensp;&ensp;1.8.1、移动端分页"></a>&ensp;&ensp;&ensp;&ensp;1.8.1、移动端分页</h5><p>&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;<a href="http://www.mescroll.com/api.html?v=191101" target="_blank" rel="noopener">mescroll连接</a><br>&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;移动端分页目前采用第三方插件库mescroll.js （也可使用其他第三方插件比如iscroll）<br>&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;<img src="https://qn.xhjfx.com/mescroll/list-news.gif" alt="分页例图">&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;<img src="https://qn.xhjfx.com/mescroll/list-mescroll-lazy.gif" alt="分页例图2"></p>
+<h5 id="ensp-ensp-ensp-ensp-1-8-2、pc端分页"><a href="#ensp-ensp-ensp-ensp-1-8-2、pc端分页" class="headerlink" title="&ensp;&ensp;&ensp;&ensp;1.8.2、pc端分页"></a>&ensp;&ensp;&ensp;&ensp;1.8.2、pc端分页</h5><pre><code>pc端分页目前采用第三方插件库laypage、kkpager、element-ui分页等
+</code></pre><p>&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;<a href="https://www.layui.com/demo/laypage.html" target="_blank" rel="noopener">laypage分页</a><br>&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;<a href="https://github.com/pgkk/kkpager" target="_blank" rel="noopener">kkapger分页</a><br>&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;<a href="https://element.eleme.cn/#/zh-CN/component/pagination" target="_blank" rel="noopener">element分页</a></p>
+<h4 id="1-9、轮播："><a href="#1-9、轮播：" class="headerlink" title="1.9、轮播："></a>1.9、轮播：</h4><h4 id="ensp-ensp-ensp-ensp-ensp-ensp-1-9-1、swiper轮播组件"><a href="#ensp-ensp-ensp-ensp-ensp-ensp-1-9-1、swiper轮播组件" class="headerlink" title="&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;1.9.1、swiper轮播组件"></a>&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;1.9.1、swiper轮播组件</h4><p>&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;第三方的轮播组件swiper<a href="https://www.swiper.com.cn/usage/index.html" target="_blank" rel="noopener">swiper使用文档</a></p>
+<h4 id="ensp-ensp-ensp-ensp-ensp-ensp-1-9-2、bootstrap轮播"><a href="#ensp-ensp-ensp-ensp-ensp-ensp-1-9-2、bootstrap轮播" class="headerlink" title="&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;1.9.2、bootstrap轮播"></a>&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;1.9.2、bootstrap轮播</h4><p>&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;bootstrap carousel <a href="https://v3.bootcss.com/javascript/#carousel" target="_blank" rel="noopener">bootstrap轮播</a></p>
+<h4 id="ensp-ensp-ensp-ensp-ensp-ensp-1-9-3、其他轮播插件"><a href="#ensp-ensp-ensp-ensp-ensp-ensp-1-9-3、其他轮播插件" class="headerlink" title="&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;1.9.3、其他轮播插件"></a>&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;1.9.3、其他轮播插件</h4>
+          
+        
+      
+    </div>
+
+    
+    
+    
+    <div>
+      
+    </div>
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yangzhen1994.github.io/2019/11/19/hexo迁移/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1344,319 +2006,6 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yangzhen1994.github.io/2019/06/26/hexo添加轮播/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="yangzhen">
-      <meta itemprop="description" content>
-      <meta itemprop="image" content="/images/new_avatar.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="杨镇的问题Blog">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2019/06/26/hexo添加轮播/" itemprop="url">Hexo next下添加轮播图</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-06-26T10:11:54+08:00">
-                2019-06-26
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Next配置/" itemprop="url" rel="index">
-                    <span itemprop="name">Next配置</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h3 id="上来先贴一个原文链接"><a href="#上来先贴一个原文链接" class="headerlink" title="上来先贴一个原文链接"></a>上来先贴一个原文链接</h3><p><img src="/images/bqb_sh.jpg" alt="Alt text"><br>原文<a href="https://www.jianshu.com/p/d1307d3f71bb" title="链接" target="_blank" rel="noopener">https://www.jianshu.com/p/d1307d3f71bb</a><br>轮播一开始 轮播图的点击查看大图会有错 所以 网上建议fancybox 在next配置下改为了false 这样会禁用所有图片查看大图 都无法点击查看大图了<br>所以我还是改为了true 轮播图点击大图查看弹出错误信息就弹出把 毕竟有的文章里的图还是需要查看大图的</p>
-<p>在themes\next\layout\macro文件下创建carousel.swig文件。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br><span class="line">152</span><br><span class="line">153</span><br><span class="line">154</span><br><span class="line">155</span><br><span class="line">156</span><br><span class="line">157</span><br><span class="line">158</span><br><span class="line">159</span><br><span class="line">160</span><br><span class="line">161</span><br><span class="line">162</span><br><span class="line">163</span><br><span class="line">164</span><br><span class="line">165</span><br><span class="line">166</span><br><span class="line">167</span><br><span class="line">168</span><br><span class="line">169</span><br><span class="line">170</span><br><span class="line">171</span><br><span class="line">172</span><br><span class="line">173</span><br><span class="line">174</span><br><span class="line">175</span><br><span class="line">176</span><br><span class="line">177</span><br><span class="line">178</span><br><span class="line">179</span><br><span class="line">180</span><br><span class="line">181</span><br><span class="line">182</span><br><span class="line">183</span><br><span class="line">184</span><br><span class="line">185</span><br><span class="line">186</span><br><span class="line">187</span><br><span class="line">188</span><br><span class="line">189</span><br><span class="line">190</span><br><span class="line">191</span><br><span class="line">192</span><br><span class="line">193</span><br><span class="line">194</span><br><span class="line">195</span><br><span class="line">196</span><br><span class="line">197</span><br><span class="line">198</span><br><span class="line">199</span><br><span class="line">200</span><br><span class="line">201</span><br><span class="line">202</span><br><span class="line">203</span><br><span class="line">204</span><br><span class="line">205</span><br><span class="line">206</span><br><span class="line">207</span><br><span class="line">208</span><br><span class="line">209</span><br><span class="line">210</span><br><span class="line">211</span><br><span class="line">212</span><br><span class="line">213</span><br><span class="line">214</span><br><span class="line">215</span><br><span class="line">216</span><br><span class="line">217</span><br><span class="line">218</span><br><span class="line">219</span><br><span class="line">220</span><br><span class="line">221</span><br><span class="line">222</span><br><span class="line">223</span><br><span class="line">224</span><br><span class="line">225</span><br><span class="line">226</span><br><span class="line">227</span><br><span class="line">228</span><br><span class="line">229</span><br><span class="line">230</span><br><span class="line">231</span><br><span class="line">232</span><br><span class="line">233</span><br><span class="line">234</span><br><span class="line">235</span><br><span class="line">236</span><br><span class="line">237</span><br><span class="line">238</span><br><span class="line">239</span><br><span class="line">240</span><br><span class="line">241</span><br><span class="line">242</span><br><span class="line">243</span><br><span class="line">244</span><br><span class="line">245</span><br><span class="line">246</span><br><span class="line">247</span><br><span class="line">248</span><br><span class="line">249</span><br><span class="line">250</span><br><span class="line">251</span><br><span class="line">252</span><br><span class="line">253</span><br><span class="line">254</span><br><span class="line">255</span><br><span class="line">256</span><br><span class="line">257</span><br><span class="line">258</span><br><span class="line">259</span><br><span class="line">260</span><br><span class="line">261</span><br><span class="line">262</span><br><span class="line">263</span><br><span class="line">264</span><br><span class="line">265</span><br><span class="line">266</span><br><span class="line">267</span><br><span class="line">268</span><br><span class="line">269</span><br><span class="line">270</span><br><span class="line">271</span><br><span class="line">272</span><br><span class="line">273</span><br><span class="line">274</span><br><span class="line">275</span><br><span class="line">276</span><br><span class="line">277</span><br><span class="line">278</span><br><span class="line">279</span><br><span class="line">280</span><br><span class="line">281</span><br><span class="line">282</span><br><span class="line">283</span><br><span class="line">284</span><br><span class="line">285</span><br><span class="line">286</span><br><span class="line">287</span><br><span class="line">288</span><br><span class="line">289</span><br><span class="line">290</span><br><span class="line">291</span><br><span class="line">292</span><br><span class="line">293</span><br><span class="line">294</span><br><span class="line">295</span><br><span class="line">296</span><br><span class="line">297</span><br><span class="line">298</span><br><span class="line">299</span><br><span class="line">300</span><br><span class="line">301</span><br><span class="line">302</span><br></pre></td><td class="code"><pre><span class="line">&#123;% if theme.carousel.enable %&#125;</span><br><span class="line">&lt;script src=&quot;https://cdn.staticfile.org/jquery/2.1.1/jquery.min.js&quot;&gt;&lt;/script&gt;</span><br><span class="line">&lt;script src=&quot;https://cdn.staticfile.org/twitter-bootstrap/3.3.7/js/bootstrap.min.js&quot;&gt;&lt;/script&gt;</span><br><span class="line"></span><br><span class="line">&lt;style type=&quot;text/css&quot;&gt;</span><br><span class="line"></span><br><span class="line">.glyphicon-chevron-left:before&#123;</span><br><span class="line">    content: &quot;《&quot;</span><br><span class="line">&#125;</span><br><span class="line">.glyphicon-chevron-right:before&#123;</span><br><span class="line">    content: &quot;》&quot;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">@media (max-width: 767px)&#123;</span><br><span class="line">    .rights&#123;</span><br><span class="line">        display: none;</span><br><span class="line">    &#125;</span><br><span class="line">    .carousel&#123;</span><br><span class="line">        width: 100% !important;</span><br><span class="line">        height: 100% !important;</span><br><span class="line">    &#125;</span><br><span class="line">    .slide&#123;</span><br><span class="line">        width: 100% !important;</span><br><span class="line">        height: 100% !important;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">.carousel&#123;</span><br><span class="line">    width: 100%;</span><br><span class="line">    height: 100%;</span><br><span class="line">    position: relative;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">.carousel-inner &#123;</span><br><span class="line">  position: relative;</span><br><span class="line">  overflow: hidden;</span><br><span class="line">  width: 100%;</span><br><span class="line">&#125;</span><br><span class="line">.carousel-inner &gt; .item &#123;</span><br><span class="line">  display: none;</span><br><span class="line">  position: relative;</span><br><span class="line">  -webkit-transition: 0.6s ease-in-out left;</span><br><span class="line">  -o-transition: 0.6s ease-in-out left;</span><br><span class="line">  transition: 0.6s ease-in-out left;</span><br><span class="line">&#125;</span><br><span class="line">.carousel-inner &gt; .item &gt; img,</span><br><span class="line">.carousel-inner &gt; .item &gt; a &gt; img &#123;</span><br><span class="line">  line-height: 1;</span><br><span class="line">&#125;</span><br><span class="line">@media all and (transform-3d), (-webkit-transform-3d) &#123;</span><br><span class="line">  .carousel-inner &gt; .item &#123;</span><br><span class="line">    -webkit-transition: -webkit-transform 0.6s ease-in-out;</span><br><span class="line">    -moz-transition: -moz-transform 0.6s ease-in-out;</span><br><span class="line">    -o-transition: -o-transform 0.6s ease-in-out;</span><br><span class="line">    transition: transform 0.6s ease-in-out;</span><br><span class="line">    -webkit-backface-visibility: hidden;</span><br><span class="line">    -moz-backface-visibility: hidden;</span><br><span class="line">    backface-visibility: hidden;</span><br><span class="line">    -webkit-perspective: 1000px;</span><br><span class="line">    -moz-perspective: 1000px;</span><br><span class="line">    perspective: 1000px;</span><br><span class="line">  &#125;</span><br><span class="line">  .carousel-inner &gt; .item.next,</span><br><span class="line">  .carousel-inner &gt; .item.active.right &#123;</span><br><span class="line">    -webkit-transform: translate3d(100%, 0, 0);</span><br><span class="line">    transform: translate3d(100%, 0, 0);</span><br><span class="line">    left: 0;</span><br><span class="line">  &#125;</span><br><span class="line">  .carousel-inner &gt; .item.prev,</span><br><span class="line">  .carousel-inner &gt; .item.active.left &#123;</span><br><span class="line">    -webkit-transform: translate3d(-100%, 0, 0);</span><br><span class="line">    transform: translate3d(-100%, 0, 0);</span><br><span class="line">    left: 0;</span><br><span class="line">  &#125;</span><br><span class="line">  .carousel-inner &gt; .item.next.left,</span><br><span class="line">  .carousel-inner &gt; .item.prev.right,</span><br><span class="line">  .carousel-inner &gt; .item.active &#123;</span><br><span class="line">    -webkit-transform: translate3d(0, 0, 0);</span><br><span class="line">    transform: translate3d(0, 0, 0);</span><br><span class="line">    left: 0;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line">.carousel-inner &gt; .active,</span><br><span class="line">.carousel-inner &gt; .next,</span><br><span class="line">.carousel-inner &gt; .prev &#123;</span><br><span class="line">  display: block;</span><br><span class="line">&#125;</span><br><span class="line">.carousel-inner &gt; .active &#123;</span><br><span class="line">  left: 0;</span><br><span class="line">&#125;</span><br><span class="line">.carousel-inner &gt; .next,</span><br><span class="line">.carousel-inner &gt; .prev &#123;</span><br><span class="line">  position: absolute;</span><br><span class="line">  top: 0;</span><br><span class="line">  width: 100%;</span><br><span class="line">&#125;</span><br><span class="line">.carousel-inner &gt; .next &#123;</span><br><span class="line">  left: 100%;</span><br><span class="line">&#125;</span><br><span class="line">.carousel-inner &gt; .prev &#123;</span><br><span class="line">  left: -100%;</span><br><span class="line">&#125;</span><br><span class="line">.carousel-inner &gt; .next.left,</span><br><span class="line">.carousel-inner &gt; .prev.right &#123;</span><br><span class="line">  left: 0;</span><br><span class="line">&#125;</span><br><span class="line">.carousel-inner &gt; .active.left &#123;</span><br><span class="line">  left: -100%;</span><br><span class="line">&#125;</span><br><span class="line">.carousel-inner &gt; .active.right &#123;</span><br><span class="line">  left: 100%;</span><br><span class="line">&#125;</span><br><span class="line">.carousel-control &#123;</span><br><span class="line">  position: absolute;</span><br><span class="line">  top: 0;</span><br><span class="line">  left: 0;</span><br><span class="line">  bottom: 0;</span><br><span class="line">  width: 15%;</span><br><span class="line">  opacity: 0.5;</span><br><span class="line">  filter: alpha(opacity=50);</span><br><span class="line">  font-size: 20px;</span><br><span class="line">  color: #fff;</span><br><span class="line">  text-align: center;</span><br><span class="line">  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.6);</span><br><span class="line">  background-color: rgba(0, 0, 0, 0);</span><br><span class="line">&#125;</span><br><span class="line">.carousel-control.left &#123;</span><br><span class="line">  background-image: -webkit-linear-gradient(left, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0.0001) 100%);</span><br><span class="line">  background-image: -o-linear-gradient(left, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0.0001) 100%);</span><br><span class="line">  background-image: linear-gradient(to right, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0.0001) 100%);</span><br><span class="line">  background-repeat: repeat-x;</span><br><span class="line">  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=&apos;#80000000&apos;, endColorstr=&apos;#00000000&apos;, GradientType=1);</span><br><span class="line">&#125;</span><br><span class="line">.carousel-control.right &#123;</span><br><span class="line">  left: auto;</span><br><span class="line">  right: 0;</span><br><span class="line">  background-image: -webkit-linear-gradient(left, rgba(0, 0, 0, 0.0001) 0%, rgba(0, 0, 0, 0.5) 100%);</span><br><span class="line">  background-image: -o-linear-gradient(left, rgba(0, 0, 0, 0.0001) 0%, rgba(0, 0, 0, 0.5) 100%);</span><br><span class="line">  background-image: linear-gradient(to right, rgba(0, 0, 0, 0.0001) 0%, rgba(0, 0, 0, 0.5) 100%);</span><br><span class="line">  background-repeat: repeat-x;</span><br><span class="line">  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=&apos;#00000000&apos;, endColorstr=&apos;#80000000&apos;, GradientType=1);</span><br><span class="line">&#125;</span><br><span class="line">.carousel-control:hover,</span><br><span class="line">.carousel-control:focus &#123;</span><br><span class="line">  outline: 0;</span><br><span class="line">  color: #fff;</span><br><span class="line">  text-decoration: none;</span><br><span class="line">  opacity: 0.9;</span><br><span class="line">  filter: alpha(opacity=90);</span><br><span class="line">&#125;</span><br><span class="line">.carousel-control .icon-prev,</span><br><span class="line">.carousel-control .icon-next,</span><br><span class="line">.carousel-control .glyphicon-chevron-left,</span><br><span class="line">.carousel-control .glyphicon-chevron-right &#123;</span><br><span class="line">  position: absolute;</span><br><span class="line">  top: 50%;</span><br><span class="line">  margin-top: -10px;</span><br><span class="line">  z-index: 5;</span><br><span class="line">  display: inline-block;</span><br><span class="line">&#125;</span><br><span class="line">.carousel-control .icon-prev,</span><br><span class="line">.carousel-control .glyphicon-chevron-left &#123;</span><br><span class="line">  left: 50%;</span><br><span class="line">  margin-left: -10px;</span><br><span class="line">&#125;</span><br><span class="line">.carousel-control .icon-next,</span><br><span class="line">.carousel-control .glyphicon-chevron-right &#123;</span><br><span class="line">  right: 50%;</span><br><span class="line">  margin-right: -10px;</span><br><span class="line">&#125;</span><br><span class="line">.carousel-control .icon-prev,</span><br><span class="line">.carousel-control .icon-next &#123;</span><br><span class="line">  width: 20px;</span><br><span class="line">  height: 20px;</span><br><span class="line">  line-height: 1;</span><br><span class="line">  font-family: serif;</span><br><span class="line">&#125;</span><br><span class="line">.carousel-control .icon-prev:before &#123;</span><br><span class="line">  content: &apos;\2039&apos;;</span><br><span class="line">&#125;</span><br><span class="line">.carousel-control .icon-next:before &#123;</span><br><span class="line">  content: &apos;\203a&apos;;</span><br><span class="line">&#125;</span><br><span class="line">.carousel-indicators &#123;</span><br><span class="line">  position: absolute;</span><br><span class="line">  bottom: 10px;</span><br><span class="line">  left: 50%;</span><br><span class="line">  z-index: 15;</span><br><span class="line">  width: 60%;</span><br><span class="line">  margin-left: -30%;</span><br><span class="line">  padding-left: 0;</span><br><span class="line">  list-style: none;</span><br><span class="line">  text-align: center;</span><br><span class="line">&#125;</span><br><span class="line">.carousel-indicators li &#123;</span><br><span class="line">  display: inline-block;</span><br><span class="line">  width: 10px;</span><br><span class="line">  height: 10px;</span><br><span class="line">  margin: 1px;</span><br><span class="line">  text-indent: -999px;</span><br><span class="line">  border: 1px solid #fff;</span><br><span class="line">  border-radius: 10px;</span><br><span class="line">  cursor: pointer;</span><br><span class="line">  background-color: #000 \9;</span><br><span class="line">  background-color: rgba(0, 0, 0, 0);</span><br><span class="line">&#125;</span><br><span class="line">.carousel-indicators .active &#123;</span><br><span class="line">  margin: 0;</span><br><span class="line">  width: 12px;</span><br><span class="line">  height: 12px;</span><br><span class="line">  background-color: #fff;</span><br><span class="line">&#125;</span><br><span class="line">.carousel-caption &#123;</span><br><span class="line">  position: absolute;</span><br><span class="line">  left: 15%;</span><br><span class="line">  right: 15%;</span><br><span class="line">  bottom: 20px;</span><br><span class="line">  z-index: 10;</span><br><span class="line">  padding-top: 20px;</span><br><span class="line">  padding-bottom: 20px;</span><br><span class="line">  color: #fff;</span><br><span class="line">  text-align: center;</span><br><span class="line">  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.6);</span><br><span class="line">&#125;</span><br><span class="line">.carousel-caption .btn &#123;</span><br><span class="line">  text-shadow: none;</span><br><span class="line">&#125;</span><br><span class="line">@media screen and (min-width: 768px) &#123;</span><br><span class="line">  .carousel-control .glyphicon-chevron-left,</span><br><span class="line">  .carousel-control .glyphicon-chevron-right,</span><br><span class="line">  .carousel-control .icon-prev,</span><br><span class="line">  .carousel-control .icon-next &#123;</span><br><span class="line">    width: 30px;</span><br><span class="line">    height: 30px;</span><br><span class="line">    margin-top: -10px;</span><br><span class="line">    font-size: 30px;</span><br><span class="line">  &#125;</span><br><span class="line">  .carousel-control .glyphicon-chevron-left,</span><br><span class="line">  .carousel-control .icon-prev &#123;</span><br><span class="line">    margin-left: -10px;</span><br><span class="line">  &#125;</span><br><span class="line">  .carousel-control .glyphicon-chevron-right,</span><br><span class="line">  .carousel-control .icon-next &#123;</span><br><span class="line">    margin-right: -10px;</span><br><span class="line">  &#125;</span><br><span class="line">  .carousel-caption &#123;</span><br><span class="line">    left: 20%;</span><br><span class="line">    right: 20%;</span><br><span class="line">    padding-bottom: 30px;</span><br><span class="line">  &#125;</span><br><span class="line">  .carousel-indicators &#123;</span><br><span class="line">    bottom: 20px;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line">&lt;/style&gt;</span><br><span class="line">&lt;div width=&quot;100%&quot; height=&quot;320px&quot; style=&quot;border: 0px; overflow: hidden; border-radius: 10px;&quot; scrolling=&quot;no&quot;&gt;</span><br><span class="line"></span><br><span class="line">    &lt;div id=&quot;myCarousel&quot; class=&quot;carousel slide&quot; data-ride=&quot;carousel&quot; data-interval=&quot;3500&quot; &gt;</span><br><span class="line">        &lt;!-- 轮播（Carousel）指标 --&gt;</span><br><span class="line">        &lt;ol class=&quot;carousel-indicators&quot;&gt;</span><br><span class="line">        &#123;% set index = 0 %&#125;</span><br><span class="line">        &#123;% for item in theme.carousel.item %&#125;</span><br><span class="line"></span><br><span class="line">            &lt;li data-target=&quot;#myCarousel&quot; data-slide-to=&quot;&#123;&#123;index&#125;&#125;&quot;&gt;&lt;/li&gt;</span><br><span class="line">            &#123;% set index = index+1 %&#125;</span><br><span class="line"></span><br><span class="line">        &#123;% endfor %&#125;</span><br><span class="line">        &lt;/ol&gt;</span><br><span class="line">        &lt;!-- 轮播（Carousel）项目 --&gt;</span><br><span class="line">        &lt;div class=&quot;carousel-inner&quot; style=&quot;height: 280px; border-radius: 10px; width: 100%;&quot;&gt;</span><br><span class="line"></span><br><span class="line">        &#123;% set act = 0 %&#125;</span><br><span class="line">         &#123;% for item in theme.carousel.item %&#125;</span><br><span class="line"></span><br><span class="line">            &#123;% if act===0 %&#125;</span><br><span class="line">                &lt;a class=&quot;item active&quot; href=&quot;&#123;&#123; url_for(item.link) &#125;&#125;&quot; target=&quot;_blank&quot; style=&quot;height: 100%;&quot;&gt;</span><br><span class="line">                    &lt;img src=&quot;&#123;&#123;item.img&#125;&#125;&quot;   style=&quot;width: 100%; height: 100%&quot; &gt;</span><br><span class="line">                &lt;/a&gt;</span><br><span class="line">                &#123;% set act = 1 %&#125;</span><br><span class="line">                &#123;% elseif act===1 %&#125;</span><br><span class="line">                    &lt;a class=&quot;item&quot; href=&quot;&#123;&#123; url_for(item.link) &#125;&#125;&quot; target=&quot;_blank&quot; style=&quot;height: 100%;&quot;&gt;</span><br><span class="line">                        &lt;img src=&quot;&#123;&#123;item.img&#125;&#125;&quot;  style=&quot;width: 100%; height: 100%;&quot; &gt;</span><br><span class="line">                    &lt;/a&gt;</span><br><span class="line">            &#123;% endif %&#125;</span><br><span class="line"></span><br><span class="line">        &#123;% endfor %&#125;</span><br><span class="line"></span><br><span class="line">        &lt;/div&gt;</span><br><span class="line">        &lt;!-- 轮播（Carousel）导航 --&gt;</span><br><span class="line">        &lt;a class=&quot;left carousel-control&quot; href=&quot;#myCarousel&quot; role=&quot;button&quot; data-slide=&quot;prev&quot;&gt;</span><br><span class="line">            &lt;span class=&quot;glyphicon glyphicon-chevron-left&quot; aria-hidden=&quot;true&quot;&gt;&lt;/span&gt;</span><br><span class="line"></span><br><span class="line">        &lt;/a&gt;</span><br><span class="line">        &lt;a class=&quot;right carousel-control&quot; href=&quot;#myCarousel&quot; role=&quot;button&quot; data-slide=&quot;next&quot;&gt;</span><br><span class="line">            &lt;span class=&quot;glyphicon glyphicon-chevron-right&quot; aria-hidden=&quot;true&quot;&gt;&lt;/span&gt;</span><br><span class="line"></span><br><span class="line">        &lt;/a&gt;</span><br><span class="line">    &lt;/div&gt;</span><br><span class="line">&lt;/div&gt;</span><br><span class="line"></span><br><span class="line">&#123;% endif %&#125;</span><br></pre></td></tr></table></figure>
-<p>在next主题（其它主题也可以）中的_config.xml主题配置文件中末尾添加如下配置：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">#Home carousel map, from means link, img means picture</span><br><span class="line">carousel:</span><br><span class="line">   enable: true</span><br><span class="line">   item: [</span><br><span class="line">      &#123;</span><br><span class="line">        &apos;link&apos;:&apos;文章链接1&apos;,</span><br><span class="line">        &apos;img&apos;:&apos;图片链接1&apos;</span><br><span class="line">      &#125;,</span><br><span class="line">      &#123;</span><br><span class="line">        &apos;link&apos;:&apos;文章链接2&apos;,</span><br><span class="line">        &apos;img&apos;:&apos;图片链接2&apos;</span><br><span class="line">      &#125;,</span><br><span class="line">   ]</span><br></pre></td></tr></table></figure>
-<p><em>这里的图片链接可以是在线的 我是用的是工程里的 ： /images/xxx.xx</em><br>主要是 这里是给首页添加轮播 那么我想给我的about添加怎么办呢？<br>\themes\next\layout 我也没有找到对应about的swig文件<br>后来我发现一些没有特定的对应 都是通过过page.swig来实现的<br>于是再 page.swig文件中找到<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&#123;% block content %&#125;</span><br><span class="line">       ....</span><br><span class="line">       ....</span><br><span class="line">    &#123;% endblock %&#125;</span><br></pre></td></tr></table></figure></p>
-<p>其实添加的位置你自己随意 我是在</p>
- <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#123;% endblock %&#125;</span><br></pre></td></tr></table></figure>
-<p> 上面一行 也就是你的markdown内容最下面 加入轮播图区域<br>简单判断页面 是不是about页面<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&#123;% if page.type === &quot;about&quot;%&#125;</span><br><span class="line">      &#123;% include &apos;_macro/carousel.swig&apos; %&#125;</span><br><span class="line">    &#123;% endif %&#125;</span><br></pre></td></tr></table></figure></p>
-<p>就好了</p>
-
-          
-        
-      
-    </div>
-
-    
-    
-    
-    <div>
-      
-    </div>
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yangzhen1994.github.io/2019/06/25/hexo添加音乐播放/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="yangzhen">
-      <meta itemprop="description" content>
-      <meta itemprop="image" content="/images/new_avatar.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="杨镇的问题Blog">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2019/06/25/hexo添加音乐播放/" itemprop="url">hexo 加载音乐播放</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-06-25T17:57:54+08:00">
-                2019-06-25
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Next配置/" itemprop="url" rel="index">
-                    <span itemprop="name">Next配置</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>根目录下<br>npm install hexo-tag-aplayer –save<br>然后再想使用的文章中添加<br>1、<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#123;% aplayer &quot;歌曲名&quot; &quot;歌手名&quot; &quot;https://什么什么什么.mp3&quot; &quot;https://封面图.jpg&quot; &quot;lrc:https://歌词.lrc&quot; %&#125;</span><br></pre></td></tr></table></figure></p>
-<p>标签参数</p>
-<ul>
-<li>title : 曲目标题</li>
-<li>author: 曲目作者</li>
-<li>url: 音乐文件 URL 地址</li>
-<li>picture_url: (可选) 音乐对应的图片地址</li>
-<li>narrow: （可选）播放器袖珍风格</li>
-<li>autoplay: (可选) 自动播放，移动端浏览器暂时不支持此功能</li>
-<li>width:xxx:(可选) 播放器宽度(默认: 100%)</li>
-<li>lrc:xxx: (可选）歌词文件 URL 地址</li>
-</ul>
-<p>2、<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&#123;% aplayerlrc &quot;title&quot; &quot;author&quot; &quot;url&quot; &quot;封面(选填)&quot; &quot;autoplay&quot; %&#125;</span><br><span class="line">  [00:00.00]lrc here</span><br><span class="line">  &#123;% endaplayerlrc %&#125;</span><br></pre></td></tr></table></figure></p>
-<p>歌词的获取，可以直接找到各层次文件，或者可以直接在网易云上通过以下方法获取<br><a href="http://music.163.com/api/song/media?id=863046037" target="_blank" rel="noopener">http://music.163.com/api/song/media?id=863046037</a></p>
-<p>其中id为网易云歌曲的id，打开链接之后，可以把”lyric”字段的值复制下来，再删除\n就可以直接放到aplayerlrc标签中了，这样就可以有歌词出现<br>原文<a href="https://www.jianshu.com/p/23e33d1fdc4e" title="链接" target="_blank" rel="noopener">https://www.jianshu.com/p/23e33d1fdc4e</a><br>有缓存 多刷新 之前设置了自动播放一直不起作用 还以为代码问题 (lll￢ω￢)<br>然后 $ hexo g -d 再生成部署下 发现ok</p>
-
-          
-        
-      
-    </div>
-
-    
-    
-    
-    <div>
-      
-    </div>
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
@@ -1709,7 +2058,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">21</span>
+                  <span class="site-state-item-count">23</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>

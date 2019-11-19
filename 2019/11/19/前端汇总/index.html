@@ -1,0 +1,1206 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion" lang="zh-Hans">
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="前端,">
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="本文汇总整理了自己用到的一些基础css，可用作基础的base.css引用到项目中 前端技术汇总 由于前端相对后端框架、插件库更加的多样化，以及不同项目ui设计稿的多样性，定制化开发的各种需求，前端项目很难做到都是用统一的框架，所以此文档更多的是对以后项目进行总结已供参考。 本文档主要作用：  整理目前技术中心前端项目中所用的技术 目前前端项目中所用到的第三方插件库汇总 通过此文档对现有前端项目进行">
+<meta name="keywords" content="前端">
+<meta property="og:type" content="article">
+<meta property="og:title" content="前端技术汇总">
+<meta property="og:url" content="http://yangzhen1994.github.io/2019/11/19/前端汇总/index.html">
+<meta property="og:site_name" content="杨镇的问题Blog">
+<meta property="og:description" content="本文汇总整理了自己用到的一些基础css，可用作基础的base.css引用到项目中 前端技术汇总 由于前端相对后端框架、插件库更加的多样化，以及不同项目ui设计稿的多样性，定制化开发的各种需求，前端项目很难做到都是用统一的框架，所以此文档更多的是对以后项目进行总结已供参考。 本文档主要作用：  整理目前技术中心前端项目中所用的技术 目前前端项目中所用到的第三方插件库汇总 通过此文档对现有前端项目进行">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="https://qn.xhjfx.com/mescroll/list-news.gif">
+<meta property="og:image" content="https://qn.xhjfx.com/mescroll/list-mescroll-lazy.gif">
+<meta property="og:updated_time" content="2019-11-19T05:17:34.549Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="前端技术汇总">
+<meta name="twitter:description" content="本文汇总整理了自己用到的一些基础css，可用作基础的base.css引用到项目中 前端技术汇总 由于前端相对后端框架、插件库更加的多样化，以及不同项目ui设计稿的多样性，定制化开发的各种需求，前端项目很难做到都是用统一的框架，所以此文档更多的是对以后项目进行总结已供参考。 本文档主要作用：  整理目前技术中心前端项目中所用的技术 目前前端项目中所用到的第三方插件库汇总 通过此文档对现有前端项目进行">
+<meta name="twitter:image" content="https://qn.xhjfx.com/mescroll/list-news.gif">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Mist',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yangzhen1994.github.io/2019/11/19/前端汇总/">
+
+
+
+
+
+  <title>前端技术汇总 | 杨镇的问题Blog</title>
+  
+
+
+
+
+
+
+
+
+  <script>
+   console.log("%c 当我跨过沉沦的一切","color:red")
+   console.log("%c 向着永恒开战的时候","color:red")
+   console.log("%c 你是我的军旗","color:red")
+   console.log("%c ", "background: url(https://avatars1.githubusercontent.com/u/22900065?s=400&u=e25c661c0175ce29132e619cfffb13c52418b832&v=4) no-repeat center;padding-left:400px;padding-bottom: 400px;")
+   console.log("%c 有没有人来打dota啊qq739512172","color:yellow")
+   console.log("%c ", "background: url(http://img4.imgtn.bdimg.com/it/u=3500276,1965935702&fm=26&gp=0.jpg) no-repeat center;padding-left:500px;padding-bottom: 325px;")
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/jquery/dist/jquery.min.js"></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/font-awesome/css/font-awesome.min.css">
+  <script src="https://cdn.jsdelivr.net/gh/stevenjoezhang/live2d-widget/autoload.js"></script>
+  <!-- 页面点击小红心 -->
+  <script type="text/javascript" src="/js/src/clicklove.js"></script>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">杨镇的问题Blog</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">代码是生存,不是生活</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br>
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            归档
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yangzhen1994.github.io/2019/11/19/前端汇总/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="yangzhen">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/new_avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="杨镇的问题Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">前端技术汇总</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-11-19T17:54:54+08:00">
+                2019-11-19
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+            <span class="post-meta-divider">|</span>
+            <span class="page-pv"><i class="fa fa-file-o"></i> 浏览
+            <span class="busuanzi-value" id="busuanzi_value_page_pv"></span>次
+            </span>
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>本文汇总整理了自己用到的一些基础css，可用作基础的base.css引用到项目中</p>
+<h1 id="前端技术汇总"><a href="#前端技术汇总" class="headerlink" title="前端技术汇总"></a>前端技术汇总</h1><hr>
+<p>由于前端相对后端框架、插件库更加的多样化，以及不同项目ui设计稿的多样性，定制化开发的各种需求，前端项目很难做到都是用统一的框架，所以此文档更多的是对以后项目进行总结已供参考。</p>
+<h2 id="本文档主要作用："><a href="#本文档主要作用：" class="headerlink" title="本文档主要作用："></a>本文档主要作用：</h2><blockquote>
+<ul>
+<li>整理目前技术中心前端项目中所用的技术</li>
+<li>目前前端项目中所用到的第三方插件库汇总</li>
+<li>通过此文档对现有前端项目进行一个初步了解</li>
+<li>对以后前端项目选型的参考</li>
+</ul>
+</blockquote>
+<hr>
+<p>[TOC]</p>
+<p>##一、项目概览</p>
+<p>此文档将项目分类成为 门户类 和 后管类 。</p>
+<h3 id="1-门户类"><a href="#1-门户类" class="headerlink" title="1. 门户类"></a>1. 门户类</h3><p>&ensp;&ensp;&ensp;&ensp;门户类项目中门户网站的排版非常重要。信息的呈现方式以及门户页面的样式不同不仅会影响到信息的浏览量，也会影响到用户体验。<br>&ensp;&ensp;&ensp;&ensp;目前的门户类项目大致如下：</p>
+<blockquote>
+<ul>
+<li>信用江苏 <a href="http://www.mescroll.com/" target="_blank" rel="noopener">http://www.jscredit.gov.cn/</a></li>
+<li>淄川可视化  待补充地址</li>
+<li>长春新区统一门户 <a href="http://www.mescroll.com/" target="_blank" rel="noopener">http://39.104.101.87:8080/cc_portal</a></li>
+<li>广州公租房（诚壹宜居pc 公众号）<a href="https://www.c1yj.com/" target="_blank" rel="noopener">https://www.c1yj.com/</a></li>
+</ul>
+</blockquote>
+<h3 id="2-后管类"><a href="#2-后管类" class="headerlink" title="2. 后管类"></a>2. 后管类</h3><p>&ensp;&ensp;&ensp;&ensp;后台管理系统最大的作用就是对用户业务的支撑，大多数以表格、图标为主。界面样式大多不会复杂，要求统一、简洁。<br>目前的后管项目大致如下：</p>
+<blockquote>
+<ul>
+<li>pass后台管理系统</li>
+<li>长春新区门户后台管理系统</li>
+<li>待补充</li>
+</ul>
+</blockquote>
+<p>##二、技术概览</p>
+<h3 id="1-门户类-1"><a href="#1-门户类-1" class="headerlink" title="1. 门户类"></a>1. 门户类</h3><p>&ensp;&ensp;&ensp;&ensp;门户类前端的技术栈现基于es5、jQuery、template.js、axios、flex、rem、bootstrap、layui等，部分前后端未分离的项目使用了freemarker模板。你的本地环境需要视项目情况安装node或者tomcat,以及对应的版本控制工具。</p>
+<h4 id="1-1、可视化大屏门户："><a href="#1-1、可视化大屏门户：" class="headerlink" title="1.1、可视化大屏门户："></a>1.1、可视化大屏门户：</h4><p>&ensp;&ensp;&ensp;&ensp;该门户大多需要兼容大屏以及响应式。</p>
+<h4 id="1-2、政府类、企业类、个人门户："><a href="#1-2、政府类、企业类、个人门户：" class="headerlink" title="1.2、政府类、企业类、个人门户："></a>1.2、政府类、企业类、个人门户：</h4><p>&ensp;&ensp;&ensp;&ensp;技术栈基于html+css+js，数据渲染使用了jquery、template.js、freemarker，前端请求使用ajax或者axios库，布局使用bootstrap-ui以及layui弹窗提示。</p>
+<h4 id="1-3、公众号"><a href="#1-3、公众号" class="headerlink" title="1.3、公众号"></a>1.3、公众号</h4><p>&ensp;&ensp;&ensp;&ensp;公众号主要采取rem的方式进行适配，css布局中也会使用到flex布局，以及WEUI的插件使用。其中数据交互以及逻辑代码为js原生或者jquery。<br> &ensp;&ensp;&ensp;&ensp;rem适配：</p>
+<pre><code>function rem() {
+var psd_width = 设计稿宽度,
+    win_width = document.documentElement.clientWidth,
+    viewport = document.querySelector(&apos;meta[name=&quot;viewport&quot;]&apos;),
+    dpr = window.devicePixelRatio || 1,
+    scale = 1 / dpr,
+    rem;
+    var style = document.createElement(&apos;style&apos;);
+    rem = win_width / psd_width * 100;
+    style.innerHTML = &quot;html{font-size:&quot; + rem + &quot;px!important;}&quot;;
+    document.querySelector(&quot;head&quot;).appendChild(style);
+}
+</code></pre><h3 id="2-后管类-1"><a href="#2-后管类-1" class="headerlink" title="2. 后管类"></a>2. 后管类</h3><p>&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;后管平台现在大多是基于vue-cli，去进行二次开发。你的本地环境需要安装 node 和 git。我们的技术栈基于 ES2015+、vue、vuex、vue-router 以及 element-ui，bootstrap,layui，echarts,所有的请求数据都使用Mock.js模拟，axios进行接口交互，提前了解和学习这些知识会对使用本项目有很大的帮助。</p>
+<p>##三、插件总结<br>这里列出一些使用过的插件，当然如果你有更多更方便的插件请你继续使用。</p>
+<h4 id="1-1、布局："><a href="#1-1、布局：" class="headerlink" title="1.1、布局："></a>1.1、布局：</h4><h4 id="ensp-ensp-ensp-ensp-1-1-1、flex布局"><a href="#ensp-ensp-ensp-ensp-1-1-1、flex布局" class="headerlink" title="&ensp;&ensp;&ensp;&ensp;1.1.1、flex布局"></a>&ensp;&ensp;&ensp;&ensp;1.1.1、flex布局</h4><p>&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;多用于大屏以及移动端布局,是一种自适应的弹性布局。Flex 是 Flexible Box 的缩写，意为”弹性布局”，用来为盒状模型提供最大的灵活性。<br>&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;任何一个容器都可以指定为 Flex 布局。</p>
+<pre><code>.box{display: flex;}
+</code></pre><p>&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;行内元素也可以使用 Flex 布局。</p>
+<pre><code>.box{display: inline-flex;}
+</code></pre><p>&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;Webkit 内核的浏览器，必须加上-webkit前缀。</p>
+<pre><code>.box{
+  display: -webkit-flex; /* Safari */
+  display: flex;
+}
+</code></pre><p>&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;注意，设为 Flex 布局以后，子元素的float、clear和vertical-align属性将失效。<br>&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;flex容器的6个属性：</p>
+<blockquote>
+<ul>
+<li>flex-direction 属性决定主轴的方向（即项目的排列方向）</li>
+<li>flex-wrap flex-wrap属性定义，如果一条轴线排不下，如何换行</li>
+<li>flex-flow flex-flow属性是flex-direction属性和flex-wrap属性的简写形式，默认值为row nowrap。</li>
+<li>justify-content 属性定义了项目在主轴上的对齐方式</li>
+<li>align-items 属性定义项目在交叉轴上如何对齐。</li>
+<li>align-content 属性定义了多根轴线的对齐方式。如果项目只有一根轴线，该属性不起作用。</li>
+</ul>
+</blockquote>
+<p>flex布局详细用法 <a href="http://www.ruanyifeng.com/blog/2015/07/flex-grammar.html?utm_source=tuicool" target="_blank" rel="noopener">Flex 布局教程：语法篇</a></p>
+<h4 id="ensp-ensp-ensp-ensp-1-1-2、栅格布局"><a href="#ensp-ensp-ensp-ensp-1-1-2、栅格布局" class="headerlink" title="&ensp;&ensp;&ensp;&ensp;1.1.2、栅格布局"></a>&ensp;&ensp;&ensp;&ensp;1.1.2、栅格布局</h4><p>&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;项目中多使用bootstrap-ui,element-ui自带的栅格布局，也能满足响应式以及自适应的布局需求。</p>
+<blockquote>
+<ul>
+<li>bootstrap栅格布局 <a href="https://v3.bootcss.com/css/#grid" target="_blank" rel="noopener">bootstrap栅格系统</a></li>
+<li>element栅格布局 <a href="https://element.eleme.cn/#/zh-CN/component/layout" target="_blank" rel="noopener">element栅格系统</a></li>
+</ul>
+</blockquote>
+<h4 id="1-2、表格："><a href="#1-2、表格：" class="headerlink" title="1.2、表格："></a>1.2、表格：</h4><h4 id="ensp-ensp-ensp-ensp-1-2-1、element表格"><a href="#ensp-ensp-ensp-ensp-1-2-1、element表格" class="headerlink" title="&ensp;&ensp;&ensp;&ensp;1.2.1、element表格"></a>&ensp;&ensp;&ensp;&ensp;1.2.1、element表格</h4><h4 id="ensp-ensp-ensp-ensp-1-2-2、原生表格"><a href="#ensp-ensp-ensp-ensp-1-2-2、原生表格" class="headerlink" title="&ensp;&ensp;&ensp;&ensp;1.2.2、原生表格"></a>&ensp;&ensp;&ensp;&ensp;1.2.2、原生表格</h4><h4 id="1-3、时间选择器："><a href="#1-3、时间选择器：" class="headerlink" title="1.3、时间选择器："></a>1.3、时间选择器：</h4><h4 id="1-4、弹窗："><a href="#1-4、弹窗：" class="headerlink" title="1.4、弹窗："></a>1.4、弹窗：</h4><h4 id="1-5、图表："><a href="#1-5、图表：" class="headerlink" title="1.5、图表："></a>1.5、图表：</h4><h4 id="1-6、穿梭框："><a href="#1-6、穿梭框：" class="headerlink" title="1.6、穿梭框："></a>1.6、穿梭框：</h4><h4 id="1-7、上传："><a href="#1-7、上传：" class="headerlink" title="1.7、上传："></a>1.7、上传：</h4><h4 id="ensp-ensp-ensp-ensp-ensp-ensp-1-7-1、element中的上传"><a href="#ensp-ensp-ensp-ensp-ensp-ensp-1-7-1、element中的上传" class="headerlink" title="&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;1.7.1、element中的上传"></a>&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;1.7.1、element中的上传</h4><p>&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;后管项目中一般使用的都是基于elementui的上传组件。 <a href="https://element.eleme.cn/#/zh-CN/component/upload" target="_blank" rel="noopener">upload上传</a></p>
+<h4 id="ensp-ensp-ensp-ensp-ensp-ensp-1-7-2、weui中的上传"><a href="#ensp-ensp-ensp-ensp-ensp-ensp-1-7-2、weui中的上传" class="headerlink" title="&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;1.7.2、weui中的上传"></a>&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;1.7.2、weui中的上传</h4><p>&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;此上传用于移动端<a href="https://weui.io/#uploader" target="_blank" rel="noopener">实例</a> <a href="http://www.gzznsh.com/demo/form12.html" target="_blank" rel="noopener">带lzr压缩的上传</a><br>&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;注：不同版本可能插件的使用方法会有不同<br>&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;附：带lzr压缩的移动端weui上传code</p>
+<pre><code>&lt;!--uparea  --&gt;
+    //同时需要引入对应的weui.css
+        &lt;div class=&quot;upload_op_area&quot;&gt;
+            &lt;div class=&quot;weui-gallery&quot; id=&quot;gallery&quot;&gt;
+                &lt;span class=&quot;weui-gallery__img&quot; id=&quot;galleryImg&quot;&gt;&lt;/span&gt;
+                &lt;div class=&quot;weui-gallery__opr&quot;&gt;
+                    &lt;a href=&quot;javascript:&quot; class=&quot;weui-gallery__del&quot;&gt;
+                        &lt;i class=&quot;weui-icon-delete weui-icon_gallery-delete&quot;&gt;&lt;/i&gt;
+                    &lt;/a&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+            &lt;div class=&quot;weui-cells weui-cells_form&quot;&gt;
+                &lt;div class=&quot;weui-cell&quot;&gt;
+                    &lt;div class=&quot;weui-cell__bd&quot;&gt;
+                        &lt;div class=&quot;weui-uploader&quot;&gt;
+                            &lt;div class=&quot;weui-uploader__bd&quot;&gt;
+                                &lt;ul class=&quot;weui-uploader__files&quot; id=&quot;uploaderFiles&quot;&gt;
+
+                                &lt;/ul&gt;
+                                &lt;div class=&quot;weui-uploader__input-box&quot;&gt;
+                                    &lt;input id=&quot;uploaderInput&quot; class=&quot;weui-uploader__input zjxfjs_file&quot; type=&quot;file&quot; accept=&quot;image/*&quot;&gt;&lt;!--去除可以一次多张不然压缩可能会卡死--&gt;
+                                &lt;/div&gt;
+                            &lt;/div&gt;
+                        &lt;/div&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+        //引入js
+        &lt;script src=&quot;/static/wechat/js/frame/compressImg/lrz.bundle.js&quot;&gt;&lt;/script&gt;
+   &lt;script src=&quot;https://cdn.bootcss.com/jquery-weui/1.2.0/js/jquery-weui.min.js&quot;&gt;&lt;/script&gt;     
+
+        //上传图片mock
+    $(&apos;.uplaod_tab div&apos;).on(&apos;click&apos;, function () {
+        $(this).addClass(&apos;selected&apos;)
+        $(this).siblings().removeClass(&apos;selected&apos;)
+    });
+    var tmpl = &apos;&lt;li class=&quot;weui-uploader__file pr&quot; style=&quot;background-image:url(#url#)&quot;&gt;&lt;div class=&quot;type&quot;&gt;&lt;span&gt;&lt;/span&gt;&lt;/div&gt;&lt;/li&gt;&apos;,
+            $gallery = $(&quot;#gallery&quot;),
+            $galleryImg = $(&quot;#galleryImg&quot;),
+            $uploaderInput = $(&quot;#uploaderInput&quot;),
+            $uploaderFiles = $(&quot;#uploaderFiles&quot;),
+            count = 0,
+            oldCode = &apos;&apos;,
+            formData = new FormData();
+    var mainPc = 0;
+    $uploaderInput.on(&quot;change&quot;, function (e) {
+        var src, url = window.URL || window.webkitURL || window.mozURL,
+                files = e.target.files;
+        if (mainPc &gt; 0 &amp;&amp; $(&apos;.uplaod_tab .selected&apos;).attr(&apos;code&apos;) == &apos;mainpic&apos;) {
+            $.alert(&apos;只能上传1张封面图&apos;);
+            stopScroll($(&apos;.weui-mask&apos;));
+            $uploaderInput.val(&apos;&apos;)
+            return false;
+        }
+        if (count &gt;= 12 || files.length &gt; 12) {
+            $.alert(&apos;最多上传12张图片&apos;);
+            stopScroll($(&apos;.weui-mask&apos;))
+            return false;
+        }
+
+        var isOver = false;
+        $.showLoading(&apos;图片处理中请稍等~&apos;)
+        for (var i = 0, len = files.length; i &lt; len; ++i) {
+            var file = files[i];
+            var fileName = file.name;
+            lrz(file)
+                    .then(function (rst) {
+                        $.hideLoading()
+                        console.log(&apos;压缩后：&apos; + rst.fileLen)
+                        file = rst.file;
+                        imgWrapList.forEach(function (item, index) {
+                            if (file.size == item.size &amp;&amp; file.name == item.name) {
+                                isOver = true
+                                $.alert(&apos;图片重复&apos;, function () {
+                                    isOver = false
+                                    $(&quot;#uploaderInput&quot;).val(&apos;&apos;)
+                                });
+                                stopScroll($(&apos;.weui-mask&apos;))
+                                return false;
+                            }
+                        })
+                        if (isOver) {
+                            return
+                        }
+
+                        if (file.size &gt; 10 * 1024 * 1024) {
+                            $.alert(&apos;请上传不超过10M的图片&apos;);
+                            stopScroll($(&apos;.weui-mask&apos;))
+                            return false;
+                        }
+                        if(fileName){
+                            file.name=fileName;
+                        }
+                        transformFileToFormData(file)
+
+                        if (url) {
+                            src = url.createObjectURL(file);
+                        } else {
+                            src = e.target.result;
+                        }
+                        count++;
+                        var str = &apos;&apos;;
+                        var tmpl1 = (tmpl.split(&apos;&lt;span&gt;&apos;)[0] + &apos;&lt;span&gt;&apos; + str + tmpl.split(&apos;&lt;span&gt;&apos;)[1])
+                        $uploaderFiles.append($(tmpl1.replace(&apos;#url#&apos;, src)));
+                        //$(tmpl).find(&apos;.type&apos;).find(&apos;span&apos;).text(str)
+                        $.ajax({
+                            timeout: 30000,
+                            type: &quot;POST&quot;,
+                            url:,
+                            data: formData,
+                            beforeSend: function () {
+                                $.showLoading(&apos;图片上传中...&apos;)
+                            },
+                            contentType: false,     // 注意这里应设为false
+                            processData: false,     //  告诉jquery不要处理发送的数据
+                            success: function (res) {
+                                if (res.code === 200) {
+                                    if (!oldCode) {
+                                        var code = $(&apos;.uplaod_tab .selected&apos;).attr(&apos;code&apos;);
+                                        oldCode = code
+                                        roomPictypes += code //图片所属的类型
+                                        roomPics += res.data.name
+                                    } else {
+                                        var code = $(&apos;.uplaod_tab .selected&apos;).attr(&apos;code&apos;);
+                                        if (oldCode != code) {
+                                            if (roomPictypes.indexOf(code) &lt; 0) {
+                                                oldCode = code
+                                                roomPictypes += (&apos;,&apos; + code)
+                                                roomPics += (&apos;;&apos; + res.data.name)
+                                            } else {
+                                                var index = roomPictypes.replace(&apos;,&apos;, &apos;&apos;).indexOf(code)
+                                                var tempArr = roomPics.split(&apos;;&apos;)
+                                                var str = tempArr[index]
+                                                str += (&apos;,&apos; + res.data.name)
+                                                tempArr[index] = str
+                                                roomPics = tempArr.join(&apos;;&apos;)
+                                            }
+                                        } else {
+                                            roomPics += (&apos;,&apos; + res.data.name)
+                                        }
+                                    }
+                                }
+                            },
+                            complete: function () {
+                                $(&quot;#uploaderInput&quot;).val(&apos;&apos;);
+                                formData.delete(&apos;type&apos;);
+                                // size
+                                formData.delete(&apos;size&apos;);
+                                // name
+                                formData.delete(&apos;name&apos;);
+                                // lastModifiedDate
+                                formData.delete(&apos;lastModifiedDate&apos;);
+                                // append 文件
+                                formData.delete(&apos;file&apos;);
+                                $.hideLoading();
+                            },
+                            error: function (error) {
+                                delHandle($uploaderFiles.length - 1)
+                                $.alert(&apos;图片上传失败，请重试&apos;);
+                            }//请求出错
+                        });
+                    })
+        }
+    });
+    var index; //第几张图片
+    $uploaderFiles.on(&quot;click&quot;, &quot;li&quot;, function () {
+        index = $(this).index();
+        $galleryImg.attr(&quot;style&quot;, this.getAttribute(&quot;style&quot;));
+        $gallery.fadeIn(100);
+    });
+</code></pre><h4 id="ensp-ensp-ensp-ensp-ensp-ensp-1-7-3、tinyUpload"><a href="#ensp-ensp-ensp-ensp-ensp-ensp-1-7-3、tinyUpload" class="headerlink" title="&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;1.7.3、tinyUpload"></a>&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;1.7.3、tinyUpload</h4><pre><code>引入文件
+ &lt;script src=&quot;../../js/jquery.js&quot;&gt;&lt;/script&gt;
+&lt;link rel=&quot;stylesheet&quot; href=&quot;../../css/tinyImgUpload.css&quot;&gt;
+&lt;script src=&quot;../../js/tinyImgUpload.js&quot;&gt;&lt;/script&gt;
+
+ `/**
+ * tinyImgUpload
+ * @param ele [string] [生成组件的元素的选择器]
+ * @param options [Object] [对组件设置的基本参数]
+ * options具体参数如下
+ * path 图片上传的地址路径 必需
+ * onSuccess(res) 文件上传成功后的回调 参数为返回的文本 必需
+ * onFailure(res) 文件上传失败后的回调 参数为返回的文本 必需
+ * @return [function] [执行图片上传的函数]
+ * 调用方法
+ * tinyImgUpload(&apos;div&apos;, options)
+ */
+function tinyImgUpload(ele, options) {
+
+// 判断容器元素合理性并且添加基础元素
+var eleList = document.querySelectorAll(ele);
+if(eleList.length == 0){
+    console.log(&apos;绑定的元素不存在&apos;);
+    return;
+}else if(eleList.length&gt;1){
+    console.log(&apos;请绑定唯一元素&apos;);
+    return;
+}else {
+    eleList[0].innerHTML =&apos;&lt;div id=&quot;img-container&quot; &gt;&apos;+
+
+            &apos;&lt;div class=&quot;img-up-add  img-item&quot;&gt;&lt;div class=&quot;up_title&quot;&gt;上传电脑图片&lt;/div&gt;&lt;span class=&quot;img-add-icon&quot;&gt;&lt;img src=&quot;../../img/add_img_icon.png&quot; alt=&quot;&quot; width=&quot;64px&quot;&gt;&lt;/span&gt; &lt;/div&gt;&apos;+
+            &apos;&lt;div class=&quot;prev_area&quot;&gt;&apos;+
+            &apos;&lt;input type=&quot;file&quot; name=&quot;files&quot; id=&quot;img-file-input&quot; multiple &quot;&gt;&apos;+
+            &apos;&lt;/div&gt;&apos;;
+    var ele = eleList[0].querySelector(&apos;#img-container&apos;);
+    ele.files = [];   // 当前上传的文件数组
+}
+
+// 为添加按钮绑定点击事件，设置选择图片的功能
+var addBtn = document.querySelector(&apos;.img-up-add&apos;);
+addBtn.addEventListener(&apos;click&apos;,function () {
+    document.querySelector(&apos;#img-file-input&apos;).value = null;
+    document.querySelector(&apos;#img-file-input&apos;).click();
+    return false;
+},false)
+
+// 预览图片
+//处理input选择的图片
+function handleFileSelect(evt) {
+    var files = evt.target.files;
+
+
+    for(var i=0, f; f=files[i];i++){
+        // 过滤掉非图片类型文件
+        if(!f.type.match(&apos;image.*&apos;)){
+            continue;
+        }
+        // 过滤掉重复上传的图片
+        var tip = false;
+        for(var j=0; j&lt;(ele.files).length; j++){
+            if((ele.files)[j].name == f.name){
+                layer.alert(&apos;图片已存在&apos;)
+                tip = true;
+                break;
+            }
+        }
+        if(!tip){
+            // 图片文件绑定到容器元素上
+
+            if(ele.files.length&gt;=12){
+                layer.alert(&apos;最多12张&apos;);
+                return false
+            }
+            ele.files.push(f);
+            var reader = new FileReader();
+            reader.onload = (function (theFile) {
+                return function (e) {
+                    var oDiv = document.createElement(&apos;div&apos;);
+                    oDiv.className = &apos;img-thumb img-item border_all&apos;;
+                    // 向图片容器里添加元素
+
+                    oDiv.innerHTML = &apos;&lt;img class=&quot;thumb-icon&quot; src=&quot;&apos;+e.target.result+&apos;&quot; /&gt;&apos;+
+                                    &apos;&lt;a href=&quot;javscript:;&quot; class=&quot;img-remove&quot;&gt;x&lt;/a&gt;&apos;
+                    ele.insertBefore(oDiv, addBtn);
+                   // $(&apos;.prev_area&apos;).append(oDiv)
+                    uploadImg()
+                };
+            })(f);
+
+            reader.readAsDataURL(f);
+        }
+    }
+}
+document.querySelector(&apos;#img-file-input&apos;).addEventListener(&apos;change&apos;, handleFileSelect, false);
+
+// 删除图片
+function removeImg(evt) {
+    if(evt.target.className.match(/img-remove/)){
+        console.log(&apos;3&apos;,ele.files);
+        // 获取删除的节点的索引
+        function getIndex(ele){
+
+            if(ele &amp;&amp; ele.nodeType &amp;&amp; ele.nodeType == 1) {
+                var oParent = ele.parentNode;
+                var oChilds = oParent.children;
+                for(var i = 0; i &lt; oChilds.length; i++){
+                    if(oChilds[i] == ele)
+                        return i;
+                }
+            }else {
+                return -1;
+            }
+        }
+        // 根据索引删除指定的文件对象
+        var index = getIndex(evt.target.parentNode);
+        ele.removeChild(evt.target.parentNode);
+        if(index &lt; 0){
+            return;
+        }else {
+            ele.files.splice(index, 1);
+            //对应删除库里的图片？
+        }
+        console.log(&apos;4&apos;,ele.files);
+    }
+}
+ele.addEventListener(&apos;click&apos;, removeImg, false);
+
+// 上传图片
+function uploadImg() {
+    console.log(ele.files);
+
+    var xhr = new XMLHttpRequest();
+    var formData = new FormData();
+
+    for(var i=0, f; f=ele.files[i]; i++){
+        formData.append(&apos;files&apos;, f);
+    }
+
+    console.log(&apos;1&apos;,ele.files);
+    console.log(&apos;2&apos;,formData);
+    $.ajax(
+        {
+            type:&quot;POST&quot;,//通常会用到两种：GET,POST。默认是：GET
+            url:options.path,//(默认: 当前页地址) 发送请求的地址
+            beforeSend:function () {
+
+            },
+            data:formData,
+            contentType: false, // 注意这里应设为false
+            processData:false,   //  告诉jquery不要处理发送的数据
+            success:options.onSuccess, //请求成功
+            error:options.onFailure,//请求出错
+            complete:function () {
+                $(&apos;#img-file-input&apos;).val(&apos;&apos;)
+            }//请求完成
+        });
+
+}
+return uploadImg;
+}`   
+</code></pre><h4 id="1-8、分页："><a href="#1-8、分页：" class="headerlink" title="1.8、分页："></a>1.8、分页：</h4><h5 id="ensp-ensp-ensp-ensp-1-8-1、移动端分页"><a href="#ensp-ensp-ensp-ensp-1-8-1、移动端分页" class="headerlink" title="&ensp;&ensp;&ensp;&ensp;1.8.1、移动端分页"></a>&ensp;&ensp;&ensp;&ensp;1.8.1、移动端分页</h5><p>&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;<a href="http://www.mescroll.com/api.html?v=191101" target="_blank" rel="noopener">mescroll连接</a><br>&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;移动端分页目前采用第三方插件库mescroll.js （也可使用其他第三方插件比如iscroll）<br>&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;<img src="https://qn.xhjfx.com/mescroll/list-news.gif" alt="分页例图">&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;<img src="https://qn.xhjfx.com/mescroll/list-mescroll-lazy.gif" alt="分页例图2"></p>
+<h5 id="ensp-ensp-ensp-ensp-1-8-2、pc端分页"><a href="#ensp-ensp-ensp-ensp-1-8-2、pc端分页" class="headerlink" title="&ensp;&ensp;&ensp;&ensp;1.8.2、pc端分页"></a>&ensp;&ensp;&ensp;&ensp;1.8.2、pc端分页</h5><pre><code>pc端分页目前采用第三方插件库laypage、kkpager、element-ui分页等
+</code></pre><p>&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;<a href="https://www.layui.com/demo/laypage.html" target="_blank" rel="noopener">laypage分页</a><br>&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;<a href="https://github.com/pgkk/kkpager" target="_blank" rel="noopener">kkapger分页</a><br>&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;<a href="https://element.eleme.cn/#/zh-CN/component/pagination" target="_blank" rel="noopener">element分页</a></p>
+<h4 id="1-9、轮播："><a href="#1-9、轮播：" class="headerlink" title="1.9、轮播："></a>1.9、轮播：</h4><h4 id="ensp-ensp-ensp-ensp-ensp-ensp-1-9-1、swiper轮播组件"><a href="#ensp-ensp-ensp-ensp-ensp-ensp-1-9-1、swiper轮播组件" class="headerlink" title="&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;1.9.1、swiper轮播组件"></a>&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;1.9.1、swiper轮播组件</h4><p>&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;第三方的轮播组件swiper<a href="https://www.swiper.com.cn/usage/index.html" target="_blank" rel="noopener">swiper使用文档</a></p>
+<h4 id="ensp-ensp-ensp-ensp-ensp-ensp-1-9-2、bootstrap轮播"><a href="#ensp-ensp-ensp-ensp-ensp-ensp-1-9-2、bootstrap轮播" class="headerlink" title="&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;1.9.2、bootstrap轮播"></a>&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;1.9.2、bootstrap轮播</h4><p>&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;bootstrap carousel <a href="https://v3.bootcss.com/javascript/#carousel" target="_blank" rel="noopener">bootstrap轮播</a></p>
+<h4 id="ensp-ensp-ensp-ensp-ensp-ensp-1-9-3、其他轮播插件"><a href="#ensp-ensp-ensp-ensp-ensp-ensp-1-9-3、其他轮播插件" class="headerlink" title="&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;1.9.3、其他轮播插件"></a>&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;1.9.3、其他轮播插件</h4>
+      
+    </div>
+
+    
+    
+    
+    <div>
+      
+      <div>
+
+    <div style="text-align:center;color: #ccc;font-size:14px;">-------------本文结束<i class="fa fa-paw"></i>感谢您的阅读-------------</div>
+
+</div>
+
+      
+    </div>
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/前端/" <i class="fa fa-tag"> 前端</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/11/19/hexo迁移/" rel="next" title="hexo迁移">
+                <i class="fa fa-chevron-left"></i> hexo迁移
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2019/11/19/基础样式/" rel="prev" title="基础样式">
+                基础样式 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image" src="/images/new_avatar.jpg" alt="yangzhen">
+            
+              <p class="site-author-name" itemprop="name">yangzhen</p>
+              <p class="site-description motion-element" itemprop="description">代码是生存,不是生活</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">23</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">1</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">2</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/Yangzhen1994" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i>GitHub</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="mailto:walpyang@126.com" target="_blank" title="E-Mail">
+                      
+                        <i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#前端技术汇总"><span class="nav-number">1.</span> <span class="nav-text">前端技术汇总</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#本文档主要作用："><span class="nav-number">1.1.</span> <span class="nav-text">本文档主要作用：</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-门户类"><span class="nav-number">1.1.1.</span> <span class="nav-text">1. 门户类</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-后管类"><span class="nav-number">1.1.2.</span> <span class="nav-text">2. 后管类</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-门户类-1"><span class="nav-number">1.1.3.</span> <span class="nav-text">1. 门户类</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-1、可视化大屏门户："><span class="nav-number">1.1.3.1.</span> <span class="nav-text">1.1、可视化大屏门户：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#1-2、政府类、企业类、个人门户："><span class="nav-number">1.1.3.2.</span> <span class="nav-text">1.2、政府类、企业类、个人门户：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#1-3、公众号"><span class="nav-number">1.1.3.3.</span> <span class="nav-text">1.3、公众号</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-后管类-1"><span class="nav-number">1.1.4.</span> <span class="nav-text">2. 后管类</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-1、布局："><span class="nav-number">1.1.4.1.</span> <span class="nav-text">1.1、布局：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#ensp-ensp-ensp-ensp-1-1-1、flex布局"><span class="nav-number">1.1.4.2.</span> <span class="nav-text">    1.1.1、flex布局</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#ensp-ensp-ensp-ensp-1-1-2、栅格布局"><span class="nav-number">1.1.4.3.</span> <span class="nav-text">    1.1.2、栅格布局</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#1-2、表格："><span class="nav-number">1.1.4.4.</span> <span class="nav-text">1.2、表格：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#ensp-ensp-ensp-ensp-1-2-1、element表格"><span class="nav-number">1.1.4.5.</span> <span class="nav-text">    1.2.1、element表格</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#ensp-ensp-ensp-ensp-1-2-2、原生表格"><span class="nav-number">1.1.4.6.</span> <span class="nav-text">    1.2.2、原生表格</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#1-3、时间选择器："><span class="nav-number">1.1.4.7.</span> <span class="nav-text">1.3、时间选择器：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#1-4、弹窗："><span class="nav-number">1.1.4.8.</span> <span class="nav-text">1.4、弹窗：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#1-5、图表："><span class="nav-number">1.1.4.9.</span> <span class="nav-text">1.5、图表：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#1-6、穿梭框："><span class="nav-number">1.1.4.10.</span> <span class="nav-text">1.6、穿梭框：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#1-7、上传："><span class="nav-number">1.1.4.11.</span> <span class="nav-text">1.7、上传：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#ensp-ensp-ensp-ensp-ensp-ensp-1-7-1、element中的上传"><span class="nav-number">1.1.4.12.</span> <span class="nav-text">      1.7.1、element中的上传</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#ensp-ensp-ensp-ensp-ensp-ensp-1-7-2、weui中的上传"><span class="nav-number">1.1.4.13.</span> <span class="nav-text">      1.7.2、weui中的上传</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#ensp-ensp-ensp-ensp-ensp-ensp-1-7-3、tinyUpload"><span class="nav-number">1.1.4.14.</span> <span class="nav-text">      1.7.3、tinyUpload</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#1-8、分页："><span class="nav-number">1.1.4.15.</span> <span class="nav-text">1.8、分页：</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#ensp-ensp-ensp-ensp-1-8-1、移动端分页"><span class="nav-number">1.1.4.15.1.</span> <span class="nav-text">    1.8.1、移动端分页</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#ensp-ensp-ensp-ensp-1-8-2、pc端分页"><span class="nav-number">1.1.4.15.2.</span> <span class="nav-text">    1.8.2、pc端分页</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#1-9、轮播："><span class="nav-number">1.1.4.16.</span> <span class="nav-text">1.9、轮播：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#ensp-ensp-ensp-ensp-ensp-ensp-1-9-1、swiper轮播组件"><span class="nav-number">1.1.4.17.</span> <span class="nav-text">      1.9.1、swiper轮播组件</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#ensp-ensp-ensp-ensp-ensp-ensp-1-9-2、bootstrap轮播"><span class="nav-number">1.1.4.18.</span> <span class="nav-text">      1.9.2、bootstrap轮播</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#ensp-ensp-ensp-ensp-ensp-ensp-1-9-3、其他轮播插件"><span class="nav-number">1.1.4.19.</span> <span class="nav-text">      1.9.3、其他轮播插件</span></a></li></ol></li></ol></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">yangzhen</span>
+
+  
+</div>
+
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Mist</a> v5.1.4</div>
+
+
+
+
+        
+<div class="busuanzi-count">
+  <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+    <span class="site-uv">
+      <i class="fa fa-user"></i> 访问人数
+      <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
+      次
+    </span>
+  
+
+  
+    <span class="site-pv">
+      <i class="fa fa-eye"></i> 访问总量
+      <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
+      次
+    </span>
+  
+</div>
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="//cdn.jsdelivr.net/gh/theme-next/theme-next-canvas-nest@1.0.0/canvas-nest.min.js"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
